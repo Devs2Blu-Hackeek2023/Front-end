@@ -63,6 +63,6 @@ Atualmente, o problema da emissão de gás carbônico está crescendo constantem
 - Rob Caputo
 - Vinicius
 
-<a href="https://quickest-macrame-144.notion.site/CO2Now-75dc991ff3a0458c9ef34ab87bd2fbc5">Site para melhor vizualizção</a>
+<a href="https://quickest-macrame-144.notion.site/CO2Now-75dc991ff3a0458c9ef34ab87bd2fbc5">Site para melhor visualização</a>
 <br>
-<a href="https://www.figma.com/file/os1JcLsUkGJfe9orrKnOfp/Web-user?type=design&node-id=1-4&mode=design">Figma para vizualizção</a>
+<a href="https://www.figma.com/file/os1JcLsUkGJfe9orrKnOfp/Web-user?type=design&node-id=1-4&mode=design">Figma para visualização</a>
