@@ -15,41 +15,42 @@ Atualmente, o problema da emissão de gás carbônico está crescendo constantem
 
 - Cálculo de emissão de CO2:
     
-    Aplicação irá calcular a emissão de CO2 de um veículo que passar por determinada rua, a partir de um ponto inicial e um ponto final. Através da captura da imagens da placa e a distância percorrida.
+    Aplicação irá calcular a emissão de CO2 de um veículo que passar por determinada rua, a partir de um ponto inicial e um ponto final, através da captura da imagens da placa e a distância percorrida.
     
 - Visualização de dados:
     
-    Será possível visualizar os dados de emissão de CO2 dos veículos de acordo com a permissão por usuário.
+    Será possível visualizar os dados de emissão de CO2 por veículo, de acordo com o login do proprietário.
     
-    1. View *pública* (sem necessidade de login): mostrar dados do total de emissões por ano e por região, horário de maior emissão e modelo de carro que que mais emite CO2, podendo visualizar os dados de acordo com o CEP digitado. 
-    2. View *proprietário* (login por proprietário de veículo): mostrar os dados total e por veículo de cada proprietário.
-    3. View *admin* (login do Detran): Além das demais views, permitir fazer update nos dados dos veículos.
+    1. Rota *pública* (sem necessidade de login): retorna dados do total de emissões por ano e por região, horário de maior emissão e modelo de carro que mais emite CO2, podendo visualizar os dados de acordo com o CEP informado. 
+    2. Rota *proprietário* (login por proprietário de veículo): retorna os dados por veículo de cada proprietário.
+    3. Rota *admin* (login do Detran): Além das demais rotas, permite atualizar os dados dos veículos.
+       
 - Geração de gráficos:
     
-    O sistema deve gerar gráficos que mostram a taxa de emissão de CO2 por região (CEP) e por veículo, permitindo uma análise visual dos dados.
+    O sistema gera gráficos que mostram a taxa de emissão de CO2 por região e por veículo, permitindo uma análise visual dos dados.
     
 - Pesquisa de emissão por região:
     
-    O sistema deve permitir a possibilidade de pesquisar a emissão de CO2 por CEP digitado
+    O sistema permite a possibilidade de pesquisar a emissão de CO2 por CEP informado.
 
 **Requisitos não funcionais**
 
 - Segurança:
-    1. Deve haver autenticação de acesso e a permissão diferentes para cada usuário na visualização dos dados.
+    1. Deve haver autenticação e permissão para níveis diferentes de acesso.
     2. Apenas o usuário admin tem poder para alterar dados dos veículos.
-    3. Os dados dos veiculos serão carregados diretamente via API do Detran (simulação).
+    3. Os dados dos veículos serão carregados diretamente via API do Detran (simulação).
     
 - Usabilidade:
-    1. O sistema deve ter acesso por aplicativo mobile e web, sendo responsivo.
-    2. O sistema deve ter acesso claro e intuitivo com poucas informações na tela, promovendo fácil entendimento ao público em geral.
+    1. O sistema pode ser acessado por aplicativo mobile e web, sendo responsivo.
+    2. O sistema deve ser claro e intuitivo, com informações objetivas, promovendo fácil entendimento ao público em geral.
     
 - Compatibilidade com Navegadores:
     
-    O sistema deve ser compatível com os principais navegadores do mercado, incluindo, mas não se limitando a: Google Chrome, Mozilla Firefox, Microsoft Edge, Safari, entre outros. Os recursos e funcionalidades do sistema devem funcionar consistentemente em todos esses navegadores.
+    O sistema deve ser compatível com os principais navegadores do mercado. Os recursos e funcionalidades do sistema devem comportar todos esses navegadores.
     
 - Compatibilidade com plataformas mobile:
     
-    O sistema deve ser acessível em dispositivos Android, além de ser projetado de forma a permitir a evolução para suportar dispositivos iOS.
+    O sistema deve ser acessível em dispositivos Android, além de permitir a extensão à dispositivos iOS.
 
   # Integrantes
 
@@ -63,6 +64,6 @@ Atualmente, o problema da emissão de gás carbônico está crescendo constantem
 - Rob Caputo
 - Vinicius
 
-<a href="https://quickest-macrame-144.notion.site/CO2Now-75dc991ff3a0458c9ef34ab87bd2fbc5">Site para melhor visualização</a>
+<a href="https://www.figma.com/file/os1JcLsUkGJfe9orrKnOfp/Web-user?type=design&node-id=1-4&mode=design">Prototipação das telas da versão web</a>
 <br>
-<a href="https://www.figma.com/file/os1JcLsUkGJfe9orrKnOfp/Web-user?type=design&node-id=1-4&mode=design">Figma para visualização</a>
+<a href="https://www.figma.com/file/uTGEgnSGR9kWeFf303tEWv/Mobile?type=design&node-id=7%3A3&mode=design&t=bGgOnvJcRGCBIifE-1">Prototipação das telas da versão mobile</a>
