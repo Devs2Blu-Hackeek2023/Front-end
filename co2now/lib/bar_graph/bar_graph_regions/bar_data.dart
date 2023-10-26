@@ -18,10 +18,10 @@ class BarData{
   void initializeBarData() {
     barData = [
       IndividualBar(x: 0, y: regiaoNorte),
-      IndividualBar(x: 1, y: regiaoCentro),
-      IndividualBar(x: 2, y: regiaoLeste),
-      IndividualBar(x: 3, y: regiaoSul),
-      IndividualBar(x: 4, y: regionOeste),
+      IndividualBar(x: 1, y: regionOeste),
+      IndividualBar(x: 2, y: regiaoCentro),
+      IndividualBar(x: 3, y: regiaoLeste),
+      IndividualBar(x: 4, y: regiaoSul),
     ];
   }
 }

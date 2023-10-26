@@ -1,6 +1,6 @@
-import 'package:co2now/bar_graph/bar_graph_regions/bar_graph.dart';
+import 'package:co2now/widgets/gerar_graph.dart';
 import 'package:flutter/material.dart';
-import 'package:fl_chart/fl_chart.dart';
+import 'package:co2now/widgets/informations.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,55 +10,39 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  /*height: 415,
+          width: 625,
   List<double> regionSummary = [
-    4.40,
-    42.42,
-    10.50,
-    88.99,
-    90.10
-  ];
+    4.40, //Norte
+    42.42, //Oeste
+    10.50, //Centro
+    88.99, //Leste
+    90.10 //Sul
+  ];*/
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          children:[ 
-            Container(
-            height: 415,
-            width: 625,
-            child: BarGraph(
-              regionSummary: regionSummary,
-            ),
+          children:[
+          GerarGrafico(regionSummary: [
+                          4.40, //Norte
+                          42.42, //Oeste
+                          10.50, //Centro
+                          88.99, //Leste
+                          90.10 //Sul
+                        ], 
+                        largura: 625, 
+                        altura: 415
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             mainAxisSize: MainAxisSize.max,
             children: [
-              Container(
-                child: Column(
-                  children: [
-                    Icon(Icons.car_rental, size: 60,),
-                    Text("Teste 1")
-                  ],
-                ),
-              ),
-              Container(
-                child: Column(
-                  children: [
-                    Icon(Icons.car_rental, size: 60,),
-                    Text("Teste 1")
-                  ],
-                ),
-              ),
-              Container(
-                child: Column(
-                  children: [
-                    Icon(Icons.car_rental, size: 60,),
-                    Text("Teste 1")
-                  ],
-                ),
-              ),
+              Information(text: 'Horário de maior\n        emissão'),
+              Information(text: 'Modelo de carro\n que mais emite'),
+              Information(text: '   Esse mês teve mais \nemissão que o mês passado'),
             ],
           )
           ]
