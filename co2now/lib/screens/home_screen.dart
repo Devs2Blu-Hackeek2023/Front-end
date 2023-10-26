@@ -10,18 +10,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  /*height: 415,
-          width: 625,
-  List<double> regionSummary = [
-    4.40, //Norte
-    42.42, //Oeste
-    10.50, //Centro
-    88.99, //Leste
-    90.10 //Sul
-  ];*/
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
