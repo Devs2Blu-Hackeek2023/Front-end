@@ -1,5 +1,7 @@
+import 'package:co2now/screens/car_screen.dart';
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
+import 'colors/ccolor.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,11 +16,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const HomePage(),
+      color: Ccolor.fundoBranco,
+      home: const CarScreen(),
     );
   }
 }
