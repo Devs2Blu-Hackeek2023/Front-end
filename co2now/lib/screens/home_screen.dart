@@ -1,6 +1,6 @@
-import 'package:co2now/widgets/gerar_graph.dart';
 import 'package:flutter/material.dart';
 import 'package:co2now/widgets/informations.dart';
+import 'package:co2now/widgets/gerar_graph.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
