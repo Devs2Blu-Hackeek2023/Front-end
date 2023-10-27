@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-  
 class Ccolor{
   static const Color verde1 = Color(0xFFDBFEC0);
   static const Color verde2 = Color(0xFF7AEB43);
