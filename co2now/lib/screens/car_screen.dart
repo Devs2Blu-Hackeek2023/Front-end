@@ -11,11 +11,11 @@ class CarScreen extends StatefulWidget {
 class _CarScreenState extends State<CarScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Container(
+          SizedBox(
             width: 625,
             height: 415,
             child: LineGraph()

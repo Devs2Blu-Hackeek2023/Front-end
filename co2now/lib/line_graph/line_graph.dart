@@ -3,7 +3,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 class LineGraph extends StatelessWidget {
-  
+  const LineGraph({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class LineGraph extends StatelessWidget {
         gridData: FlGridData(
           show: true,
           getDrawingHorizontalLine: (value) {
-            return FlLine(
+            return const FlLine(
               color: Ccolor.verde5,
               strokeWidth: 1
             );
@@ -29,7 +29,7 @@ class LineGraph extends StatelessWidget {
         ),
         lineBarsData: [
           LineChartBarData(
-            spots: [
+            spots: const [
               FlSpot(0, 3),
               FlSpot(2, 1),
               FlSpot(4, 5),
@@ -62,13 +62,13 @@ class Title{
         getTitlesWidget:(value, meta) {
           switch(value.toInt()){
             case 2: 
-              return Text('2020');
+              return const Text('2020');
             case 5: 
-              return Text('2022');
+              return const Text('2022');
             case 8: 
-              return Text('2022');
+              return const Text('2022');
             default:
-              return Text('');
+              return const Text('');
           }
         },
       ),
@@ -79,27 +79,27 @@ class Title{
       getTitlesWidget: (value, meta){
         switch(value.toInt()){
           case 10:
-            return Text('10');
+            return const Text('10');
           case 20:
-            return Text('20');
+            return const Text('20');
           case 30:
-            return Text('30');
+            return const Text('30');
           case 40:
-            return Text('40');
+            return const Text('40');
           case 50:
-            return Text('50');
+            return const Text('50');
           case 60:
-            return Text('60');
+            return const Text('60');
           case 70:
-            return Text('70');
+            return const Text('70');
           case 80:
-            return Text('80');
+            return const Text('80');
           case 90:
-            return Text('90');
+            return const Text('90');
           case 100:
-            return Text('100');
+            return const Text('100');
           default:
-            return Text('');
+            return const Text('');
         }
       },
     )

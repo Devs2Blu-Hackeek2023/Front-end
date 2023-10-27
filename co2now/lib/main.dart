@@ -1,6 +1,5 @@
-import 'package:co2now/screens/car_screen.dart';
+import 'package:co2now/screens/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart';
 import 'colors/ccolor.dart';
 
 void main() {
@@ -13,11 +12,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       color: Ccolor.fundoBranco,
-      home: const CarScreen(),
+      home: HomeScreen(),
     );
   }
 }
