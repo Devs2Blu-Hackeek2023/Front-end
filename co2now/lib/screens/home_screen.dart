@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:co2now/widgets/informations.dart';
 import 'package:sidebarx/sidebarx.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeScreenState extends State<HomeScreen> {
   final _controller = SidebarXController(selectedIndex: 0, extended: false);
   @override
   Widget build(BuildContext context) {
@@ -22,15 +22,15 @@ class _HomePageState extends State<HomePage> {
           SideBar(controller: _controller),
           Container(
             transformAlignment: AlignmentDirectional.centerEnd,
-            child: Column(mainAxisSize: MainAxisSize.min, children: [
-              GerarGrafico(regionSummary: const [
+            child: const Column(mainAxisSize: MainAxisSize.min, children: [
+              GerarGrafico(regionSummary: [
                 4.40, //Norte
                 42.42, //Oeste
                 10.50, //Centro
                 88.99, //Leste
                 90.10 //Sul
               ], largura: 625, altura: 415),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 mainAxisSize: MainAxisSize.max,
                 children: [

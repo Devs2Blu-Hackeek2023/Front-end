@@ -5,7 +5,11 @@ class GerarGrafico extends StatefulWidget {
   final List<double> regionSummary;
   final double largura;
   final double altura;
-  GerarGrafico({super.key, required this.regionSummary, required this.largura, required this.altura});
+  const GerarGrafico(
+      {super.key,
+      required this.regionSummary,
+      required this.largura,
+      required this.altura});
 
   @override
   State<GerarGrafico> createState() => _GerarGraficoState();
@@ -14,19 +18,17 @@ class GerarGrafico extends StatefulWidget {
 class _GerarGraficoState extends State<GerarGrafico> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children:[
-      Text('Regiões'),
-      Container(
-      height: widget.altura,
-      width: widget.largura,
-      child: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: BarGraph(
-          regionSummary: widget.regionSummary,
+    return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      const Text('Regiões'),
+      SizedBox(
+        height: widget.altura,
+        width: widget.largura,
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: BarGraph(
+            regionSummary: widget.regionSummary,
+          ),
         ),
-      ),
       ),
     ]);
   }

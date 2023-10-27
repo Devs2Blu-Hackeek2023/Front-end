@@ -19,9 +19,9 @@ class BarGraph extends StatelessWidget {
       BarChartData(
         maxY: 100,
         minY: 0,
-        gridData: FlGridData(show: false),
+        gridData: const FlGridData(show: false),
         borderData: FlBorderData(show: false),
-        titlesData: FlTitlesData(
+        titlesData: const FlTitlesData(
           show: true,
           topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
           rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
@@ -30,7 +30,7 @@ class BarGraph extends StatelessWidget {
         barGroups: barData.barData.map((data) => BarChartGroupData(
                                         x: data.x,
                                         barRods: [BarChartRodData(toY: data.y,
-                                                  color: Color(0xff5FB139),
+                                                  color: const Color(0xff5FB139),
                                                   width: 25,
                                                   borderRadius: BorderRadius.circular(5)
                                                 )]
@@ -64,5 +64,5 @@ Widget getBottomTitles (double value, TitleMeta meta) {
       text = const Text('', style: style);
       break;
   }
-  return SideTitleWidget(child: text, axisSide: meta.axisSide);
+  return SideTitleWidget(axisSide: meta.axisSide, child: text);
 }
