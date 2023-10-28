@@ -1,3 +1,4 @@
+import 'package:co2now/colors/ccolor.dart';
 import 'package:flutter/material.dart';
 import 'package:co2now/bar_graph/bar_graph_regions/bar_graph.dart';
 
@@ -18,18 +19,29 @@ class GerarGrafico extends StatefulWidget {
 class _GerarGraficoState extends State<GerarGrafico> {
   @override
   Widget build(BuildContext context) {
-    return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-      const Text('Regiões'),
-      SizedBox(
-        height: widget.altura,
-        width: widget.largura,
-        child: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: BarGraph(
-            regionSummary: widget.regionSummary,
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center, 
+        children: [
+          const Text('Regiões', style: TextStyle(
+              color: Ccolor.cinza,
+              fontSize: 30,
+              fontWeight: FontWeight.bold
+              ),
+              textAlign: TextAlign.center,
+            ),
+          SizedBox(
+            height: widget.altura,
+            width: widget.largura,
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: BarGraph(
+                regionSummary: widget.regionSummary,
+              ),
+            ),
           ),
-        ),
+      ]
       ),
-    ]);
+    );
   }
 }
