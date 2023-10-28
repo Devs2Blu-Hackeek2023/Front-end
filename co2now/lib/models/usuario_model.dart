@@ -20,4 +20,14 @@ class UsuarioModel {
     passwordHash = json['passwordHash'];
     role = json['role'];
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'nome': nome,
+      'userName': userName,
+      'passwordHash': passwordHash,
+      'role': role,
+    };
+  }
 }

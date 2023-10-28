@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/home': (context) => HomeScreen(isLogged: false),
         '/login': (context) => const LoginScreen(),
-        '/car': (context) => const CarSelectScreen() 
+        '/car': (context) => const CarSelectScreen()
       },
     );
   }

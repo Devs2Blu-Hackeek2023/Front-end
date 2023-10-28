@@ -1,3 +1,4 @@
+import 'package:co2now/colors/ccolor.dart';
 import 'package:flutter/material.dart';
 
 class Information extends StatelessWidget {
@@ -12,10 +13,15 @@ class Information extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(15.0),
               child: Image.asset('images/circulo.png', width: 70,),
             ),
-            Text(text)
+            Text(text, style: const TextStyle(
+              color: Ccolor.cinza,
+              fontSize: 15,
+            ),
+            textAlign: TextAlign.center,
+            )
           ],
         ),
       ),

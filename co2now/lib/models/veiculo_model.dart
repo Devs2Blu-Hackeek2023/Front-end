@@ -43,4 +43,21 @@ class VeiculoModel {
     proprietario = ProprietarioModel.fromJson(json['proprietario']);
     modificacoes = json['modificacoes'];
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'placa': placa,
+      'modelo': modelo,
+      'ano': ano,
+      'marca': marca,
+      'categoria': categoria,
+      'motor': motor,
+      'combustivel': combustivel,
+      'kml': kml,
+      'proprietarioId': proprietarioId,
+      'proprietario': proprietario.toJson(),
+      'modificacoes': modificacoes,
+    };
+  }
 }

@@ -25,4 +25,15 @@ class ProprietarioModel {
     usuarioId = json['usuarioId'];
     usuario = UsuarioModel.fromJson(json['usuario']);
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'nomeCompleto': nomeCompleto,
+      'cpf': cpf,
+      'cnh': cnh,
+      'usuarioId': usuarioId,
+      'usuario': usuario.toJson(),
+    };
+  }
 }

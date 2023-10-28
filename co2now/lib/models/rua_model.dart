@@ -14,4 +14,12 @@ class RuaModel {
     cep = json['cep'];
     comprimento = json['comprimento'];
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'cep': cep,
+      'comprimento': comprimento,
+    };
+  }
 }
