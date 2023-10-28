@@ -1,4 +1,4 @@
-import 'package:co2now/screens/home_screen.dart';
+import 'package:co2now/screens/car_select_screen.dart';
 import 'package:flutter/material.dart';
 import 'colors/ccolor.dart';
 
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       color: Ccolor.fundoBranco,
-      home: HomeScreen(),
+      home: CarSelectScreen(),
     );
   }
 }

@@ -74,7 +74,7 @@ class Title{
       ),
     ),
     leftTitles: AxisTitles(sideTitles: SideTitles(
-      showTitles: false,
+      showTitles: true,
       reservedSize: 35,
       getTitlesWidget: (value, meta){
         switch(value.toInt()){
