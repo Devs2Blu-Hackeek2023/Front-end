@@ -36,15 +36,12 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   fl_chart: ^0.64.0
-<<<<<<< HEAD
   sidebarx: ^0.16.2
   flutter_launcher_icons: ^0.13.1
   http: ^1.1.0
 
 flutter_icons:
   image_path: "assets/images/co2now-logo.png"
-=======
->>>>>>> 800bf18f2e29effa49a1a159f6b9f3fed010b15a
 
 dev_dependencies:
   flutter_test:
