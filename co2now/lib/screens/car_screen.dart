@@ -1,5 +1,7 @@
 import 'package:co2now/line_graph/line_graph.dart';
+import 'package:co2now/widgets/side_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:sidebarx/sidebarx.dart';
 
 class CarScreen extends StatefulWidget {
   const CarScreen({super.key});
@@ -9,17 +11,23 @@ class CarScreen extends StatefulWidget {
 }
 
 class _CarScreenState extends State<CarScreen> {
+  final _controller = SidebarXController(selectedIndex: 0, extended: false);
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
+    return Center(
+      child: Row(
         children: [
-          SizedBox(
-            width: 625,
-            height: 415,
-            child: LineGraph()
-          )
+          SideBar(controller: _controller),
+          const Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(
+                width: 625,
+                height: 415,
+                child: LineGraph()
+              )
+            ],
+          ),
         ],
       ),
     );

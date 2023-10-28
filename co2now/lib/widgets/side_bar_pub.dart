@@ -19,6 +19,8 @@ class SideBarPub extends StatelessWidget {
           textStyle: const TextStyle(color: Ccolor.fundoBranco),
           selectedTextStyle: const TextStyle(color: Ccolor.fundoBranco),
           hoverTextStyle: const TextStyle(color: Ccolor.fundoBranco),
+          itemTextPadding: const EdgeInsets.only(left: 30),
+          selectedItemTextPadding: const EdgeInsets.only(left: 30),
           selectedIconTheme: const IconThemeData(color: Ccolor.fundoBranco),
           selectedItemDecoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
