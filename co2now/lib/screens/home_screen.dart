@@ -1,11 +1,15 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:co2now/widgets/gerar_graph.dart';
 import 'package:co2now/widgets/side_bar.dart';
+import 'package:co2now/widgets/side_bar_pub.dart';
 import 'package:flutter/material.dart';
 import 'package:co2now/widgets/informations.dart';
 import 'package:sidebarx/sidebarx.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  bool isLogged;
+  HomeScreen({super.key, required this.isLogged});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -19,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
         body: Center(
       child: Row(
         children: [
-          SideBar(controller: _controller),
+          widget.isLogged ? SideBar(controller: _controller) : SideBarPub(controller: _controller),
           Container(
             transformAlignment: AlignmentDirectional.centerEnd,
             child: const Column(mainAxisSize: MainAxisSize.min, children: [
