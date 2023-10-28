@@ -1,6 +1,7 @@
-import 'package:co2now/screens/car_screen.dart';
+import 'package:co2now/screens/car_select_screen.dart';
+import 'package:co2now/screens/home_screen.dart';
+import 'package:co2now/screens/login_screen.dart';
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart';
 import 'colors/ccolor.dart';
 
 void main() {
@@ -9,15 +10,18 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       color: Ccolor.fundoBranco,
-      home: const CarScreen(),
+      initialRoute: '/home',
+      routes: {
+        '/home': (context) => HomeScreen(isLogged: false),
+        '/login': (context) => const LoginScreen(),
+        '/car': (context) => const CarSelectScreen() 
+      },
     );
   }
 }

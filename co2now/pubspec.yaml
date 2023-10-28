@@ -37,6 +37,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   fl_chart: ^0.64.0
   sidebarx: ^0.16.2
+  flutter_launcher_icons: ^0.13.1
+  http: ^1.1.0
+
+flutter_icons:
+  image_path: "assets/images/co2now-logo.png"
 
 dev_dependencies:
   flutter_test:
