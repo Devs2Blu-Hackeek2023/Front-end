@@ -41,7 +41,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   Information(text: 'Horário de maior\n        emissão'),
                   Information(text: 'Modelo de carro\n que mais emite'),
                   Information(
-                      text: '   Esse mês teve mais \nemissão que o mês passado'),
+                      text:
+                          '   Esse mês teve mais \nemissão que o mês passado'),
                 ],
               )
             ]),
