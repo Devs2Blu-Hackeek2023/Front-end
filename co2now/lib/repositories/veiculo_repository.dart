@@ -42,7 +42,7 @@ class VeiculoRepository {
 
   static Future<void> deleteVeiculo(int id) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Veiculo/$id");
+      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Veiculo/Id?Id=$id");
       final response = await http.delete(uri);
 
       if (response.statusCode != 204) {
@@ -55,7 +55,7 @@ class VeiculoRepository {
 
   static Future<VeiculoModel> getVeiculoById(int id) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Veiculo/$id");
+      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Veiculo/Id??Id=$id");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
@@ -72,7 +72,7 @@ class VeiculoRepository {
 
   static Future<void> updateVeiculo(int id, VeiculoModel veiculo) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Veiculo/$id");
+      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Veiculo/Id?Id=$id");
       final response = await http.put(
         uri,
         body: jsonEncode(veiculo.toJson()),

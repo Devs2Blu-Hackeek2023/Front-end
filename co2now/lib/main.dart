@@ -1,6 +1,7 @@
 import 'package:co2now/screens/car_screen.dart';
 import 'package:co2now/screens/car_select_screen.dart';
 import 'package:co2now/screens/home_screen.dart';
+import 'package:co2now/screens/home_screen_adm.dart';
 import 'package:co2now/screens/login_screen.dart';
 import 'package:co2now/screens/regions_screen.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const LoginScreen(),
         '/veiculo': (context) => const CarSelectScreen(),
         '/veiculos':(context) => const CarScreen(),
-        '/regions':(context) => const RegionsScreen()
+        '/regions':(context) => const RegionsScreen(),
+        '/homeADM': (context) => const HomeScreenAdm()
       },
     );
   }

@@ -1,4 +1,4 @@
-import 'package:co2now/colors/ccolor.dart';
+ import 'package:co2now/colors/ccolor.dart';
 import 'package:co2now/icons/cicons.dart';
 import 'package:co2now/line_graph/line_graph.dart';
 import 'package:co2now/widgets/information_car.dart';
@@ -17,7 +17,7 @@ class _CarSelectScreenState extends State<CarSelectScreen> {
   final _controller = SidebarXController(selectedIndex: 0, extended: false);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold( 
           body: Stack(
             children: [
               Padding(
