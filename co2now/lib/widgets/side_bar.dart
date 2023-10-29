@@ -44,38 +44,44 @@ class SideBar extends StatelessWidget {
       },
       items: [
         SidebarXItem(
-            icon: Icons.home,
-            label: "Home",
-            onTap: () {
-              Navigator.pushReplacementNamed(context, "/home");
-            }),
+          icon: Icons.home,
+          label: "Home",
+          onTap: () {
+            Navigator.pushReplacementNamed(context, "/home");
+          }
+        ),
         SidebarXItem(
-            icon: Cicons.directions_car,
-            label: "Veichle",
-            onTap: () {
-              Navigator.pushReplacementNamed(context, "/veiculos");
-            }),
+          icon: Cicons.directions_car,
+          label: "Veichle",
+          onTap: () {
+            Navigator.pushReplacementNamed(context, "/veiculos");
+          }
+        ),
         SidebarXItem(
-            icon: Icons.settings,
-            label: "Settings",
-            onTap: () {
-              Navigator.pushReplacementNamed(context, "/settings");
-            }),
+          icon: Icons.settings,
+          label: "Settings",
+          onTap: () {
+            
+          }
+        ),
+        
         SidebarXItem(
-            icon: Icons.location_on,
-            label: "Regions",
-            onTap: () {
-              Navigator.pushReplacementNamed(context, "/regions");
-            }),
+          icon: Icons.location_on,
+          label: "Regions",
+          onTap: () {
+            Navigator.pushReplacementNamed(context, "/regions");
+          }
+        ),
       ],
       footerItems: [
         SidebarXItem(
-            icon: Icons.logout,
-            label: "Logout",
-            onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeScreen(isLogged: false)));
-            }),
+          icon: Icons.logout,
+          label: "Logout",
+          onTap: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeScreen(isLogged: false)));
+          }
+        ),
       ],
-    );
+    ); 
   }
 }

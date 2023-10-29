@@ -40,8 +40,28 @@ class SideBarAdm extends StatelessWidget {
           ),
         );
       },
-      items: const [
-        SidebarXItem(icon: Icons.person_add_alt_1, label: "Person Configuration")
+      items: [
+        SidebarXItem(
+          icon: Icons.person,
+          label: "Configuration",
+          onTap: () {
+            Navigator.pushReplacementNamed(context, "/homeADM");
+          }
+        ),
+        SidebarXItem(
+          icon: Icons.person_add_alt_1,
+          label: "Usuarios",
+          onTap: () {
+            Navigator.pushReplacementNamed(context, "/addUser");
+          }
+        ),
+        SidebarXItem(
+          icon: Icons.person,
+          label: "Proprietários",
+          onTap: () {
+
+          }
+        )
       ],
       footerItems: [
         SidebarXItem(

@@ -1,3 +1,4 @@
+import 'package:co2now/screens/add_usuarios.dart';
 import 'package:co2now/screens/car_screen.dart';
 import 'package:co2now/screens/car_select_screen.dart';
 import 'package:co2now/screens/home_screen.dart';
@@ -21,14 +22,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       color: Ccolor.fundoBranco,
-      initialRoute: '/regions',
+      initialRoute: '/home',
       routes: {
         '/home': (context) => HomeScreen(isLogged: false),
         '/login': (context) => const LoginScreen(),
         '/veiculo': (context) => const CarSelectScreen(),
         '/veiculos':(context) => const CarScreen(),
         '/regions':(context) => const RegionsScreen(),
-        '/homeADM': (context) => const HomeScreenAdm()
+        '/homeADM': (context) => const HomeScreenAdm(),
+        '/addUser': (context) => const AddUsuario()
       },
     );
   }
