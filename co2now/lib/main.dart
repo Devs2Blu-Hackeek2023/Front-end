@@ -4,7 +4,9 @@ import 'package:co2now/screens/car_select_screen.dart';
 import 'package:co2now/screens/home_screen.dart';
 import 'package:co2now/screens/home_screen_adm.dart';
 import 'package:co2now/screens/login_screen.dart';
+import 'package:co2now/screens/region_screen.dart';
 import 'package:co2now/screens/regions_screen.dart';
+import 'package:co2now/screens/street_screen.dart';
 import 'package:flutter/material.dart';
 import 'colors/ccolor.dart';
 
@@ -30,7 +32,9 @@ class MyApp extends StatelessWidget {
         '/veiculos':(context) => const CarScreen(),
         '/regions':(context) => const RegionsScreen(),
         '/homeADM': (context) => const HomeScreenAdm(),
-        '/addUser': (context) => const AddUsuario()
+        '/addUser': (context) => const AddUsuario(),
+        '/region':(context) => const RegionScreen(),
+        '/':(context) => const StreetScreen()
       },
     );
   }

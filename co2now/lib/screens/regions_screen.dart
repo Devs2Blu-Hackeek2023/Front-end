@@ -1,5 +1,6 @@
-import 'package:co2now/models/rua_model.dart';
-import 'package:co2now/repositories/rua_repository.dart';
+// import 'package:co2now/models/rua_model.dart';
+// import 'package:co2now/repositories/rua_repository.dart';
+import 'package:co2now/colors/ccolor.dart';
 import 'package:flutter/material.dart';
 import 'package:co2now/widgets/side_bar.dart';
 import 'package:sidebarx/sidebarx.dart';
@@ -13,8 +14,7 @@ class RegionsScreen extends StatefulWidget {
 
 class _RegionsScreenState extends State<RegionsScreen> {
   final _controller = SidebarXController(selectedIndex: 0, extended: false);
-  final Future<List<RuaModel>> cep = RuaRepository.getRuas();
-
+  final TextEditingController cep = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +22,7 @@ class _RegionsScreenState extends State<RegionsScreen> {
         children: [
           SizedBox(
             child: Padding(
-              padding: const EdgeInsets.only(left: 230, top: 20),
+              padding: const EdgeInsets.only(left: 230, top: 20, bottom: 50),
               child: Column(
                 children: [
                   SizedBox(
@@ -32,11 +32,154 @@ class _RegionsScreenState extends State<RegionsScreen> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10)
                         ),
-                        suffixIcon: const Icon(Icons.search),
+                        suffixIcon: IconButton(icon: const Icon(Icons.search), onPressed: () {
+                          // Future<RuaModel> rua = RuaRepository.getRuaByCEP(cep.text);
+                          Navigator.pushReplacementNamed(context, '/');
+                        },),
                         labelText: 'CEP'
                       ), 
                     ),
-                  )
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Container(
+                    width: 1000,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      color: Ccolor.verde5,
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(context, '/region');
+                      },
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(Ccolor.verde5),
+                        
+                      ),
+                      child: const Text('Norte', style: TextStyle(
+                        color: Ccolor.fundoBranco,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold
+                        ),
+                        textAlign: TextAlign.center,
+                        textDirection: TextDirection.ltr,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Container(
+                    width: 1000,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      color: Ccolor.verde5,
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(context, '/region');
+                      },
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(Ccolor.verde5),
+                        
+                      ),
+                      child: const Text('Sul', style: TextStyle(
+                        color: Ccolor.fundoBranco,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold
+                        ),
+                        textAlign: TextAlign.center,
+                        textDirection: TextDirection.ltr,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Container(
+                    width: 1000,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      color: Ccolor.verde5,
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(context, '/region');
+                      },
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(Ccolor.verde5),
+                        
+                      ),
+                      child: const Text('Leste', style: TextStyle(
+                        color: Ccolor.fundoBranco,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold
+                        ),
+                        textAlign: TextAlign.center,
+                        textDirection: TextDirection.ltr,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Container(
+                    width: 1000,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      color: Ccolor.verde5,
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(context, '/region');
+                      },
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(Ccolor.verde5),
+                        
+                      ),
+                      child: const Text('Oeste', style: TextStyle(
+                        color: Ccolor.fundoBranco,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold
+                        ),
+                        textAlign: TextAlign.center,
+                        textDirection: TextDirection.ltr,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Container(
+                    width: 1000,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      color: Ccolor.verde5,
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(context, '/region');
+                      },
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(Ccolor.verde5),
+                        
+                      ),
+                      child: const Text('Centro', style: TextStyle(
+                        color: Ccolor.fundoBranco,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold
+                        ),
+                        textAlign: TextAlign.center,
+                        textDirection: TextDirection.ltr,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
