@@ -52,7 +52,7 @@ class SideBar extends StatelessWidget {
             icon: Cicons.directions_car,
             label: "Veichle",
             onTap: () {
-              Navigator.pushReplacementNamed(context, "/veiculo");
+              Navigator.pushReplacementNamed(context, "/veiculos");
             }),
         SidebarXItem(
             icon: Icons.settings,
