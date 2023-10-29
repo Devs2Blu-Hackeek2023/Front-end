@@ -11,7 +11,7 @@ class VeiculoModel {
   late String combustivel;
   late int kml;
   late int proprietarioId;
-  late ProprietarioModel proprietario;
+  ProprietarioModel? proprietario;
   late String modificacoes;
 
   VeiculoModel({
@@ -25,7 +25,7 @@ class VeiculoModel {
     required this.combustivel,
     required this.kml,
     required this.proprietarioId,
-    required this.proprietario,
+    this.proprietario,
     required this.modificacoes,
   });
 
@@ -56,7 +56,7 @@ class VeiculoModel {
       'combustivel': combustivel,
       'kml': kml,
       'proprietarioId': proprietarioId,
-      'proprietario': proprietario.toJson(),
+      'proprietario': proprietario!.toJson(),
       'modificacoes': modificacoes,
     };
   }

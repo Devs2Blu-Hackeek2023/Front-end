@@ -1,5 +1,6 @@
 import 'package:co2now/colors/ccolor.dart';
 import 'package:co2now/icons/cicons.dart';
+import 'package:co2now/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:sidebarx/sidebarx.dart';
 
@@ -72,7 +73,7 @@ class SideBar extends StatelessWidget {
             icon: Icons.logout,
             label: "Logout",
             onTap: () {
-              Navigator.pushReplacementNamed(context, "/homePublic");
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeScreen(isLogged: false)));
             }),
       ],
     );
