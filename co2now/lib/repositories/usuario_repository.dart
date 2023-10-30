@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 class UsuarioRepository {
   static Future<void> createUsuario(UsuarioModel usuario) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Usuario");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/api/Usuario");
       final response = await http.post(
         uri,
         body: jsonEncode(usuario.toJson()),
@@ -24,7 +24,7 @@ class UsuarioRepository {
 
   static Future<UsuarioModel> getUsuarioById(int id) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Usuario/$id");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/api/Usuario/$id");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {

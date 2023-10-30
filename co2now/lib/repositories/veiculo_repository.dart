@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 class VeiculoRepository {
   static Future<void> createVeiculo(VeiculoModel veiculo) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Veiculo");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/api/Veiculo");
       final response = await http.post(
         uri,
         body: jsonEncode(veiculo.toJson()),
@@ -25,7 +25,7 @@ class VeiculoRepository {
 
   static Future<List<VeiculoModel>> getVeiculos() async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Veiculo");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/api/Veiculo");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
@@ -42,7 +42,7 @@ class VeiculoRepository {
 
   static Future<void> deleteVeiculo(int id) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Veiculo/Id?Id=$id");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/api/Veiculo/Id?Id=$id");
       final response = await http.delete(uri);
 
       if (response.statusCode != 204) {
@@ -55,7 +55,7 @@ class VeiculoRepository {
 
   static Future<VeiculoModel> getVeiculoById(int id) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Veiculo/Id??Id=$id");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/api/Veiculo/Id??Id=$id");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
@@ -72,7 +72,7 @@ class VeiculoRepository {
 
   static Future<void> updateVeiculo(int id, VeiculoModel veiculo) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Veiculo/Id?Id=$id");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/api/Veiculo/Id?Id=$id");
       final response = await http.put(
         uri,
         body: jsonEncode(veiculo.toJson()),
@@ -89,7 +89,7 @@ class VeiculoRepository {
 
   static Future<List<EmissaoModel>> getEmissaoByVeiculoId(int id) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Veiculo/$id/Emissao");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/api/Veiculo/$id/Emissao");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
@@ -106,7 +106,7 @@ class VeiculoRepository {
 
   static Future<VeiculoModel> getVeiculoByPlaca(String placa) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Veiculo/$placa/Emissao");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/api/Veiculo/$placa/Emissao");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {

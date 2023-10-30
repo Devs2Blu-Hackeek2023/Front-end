@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 class EmissaoRepository {
   static Future<void> createEmissao(EmissaoModel emissao) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Emissao");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/Emissao");
       final response = await http.post(
         uri,
         body: jsonEncode(emissao.toJson()),
@@ -24,7 +24,7 @@ class EmissaoRepository {
 
   static Future<List<EmissaoModel>> getEmissao() async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Emissao");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/Emissao");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
@@ -41,7 +41,7 @@ class EmissaoRepository {
 
   static Future<void> deleteEmissao(int id) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Emissao/$id");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/Emissao/$id");
       final response = await http.delete(uri);
 
       if (response.statusCode != 204) {
@@ -54,7 +54,7 @@ class EmissaoRepository {
 
   static Future<EmissaoModel> getEmissaoById(int id) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Emissao/$id");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/Emissao/$id");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
@@ -71,7 +71,7 @@ class EmissaoRepository {
 
   static Future<void> updateEmissao(int id, EmissaoModel emissao) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Emissao/$id");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/Emissao/$id");
       final response = await http.put(
         uri,
         body: jsonEncode(emissao.toJson()),
@@ -88,7 +88,7 @@ class EmissaoRepository {
 
   static Future<int> getTotalEmissao() async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Emissao/total");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/Emissao/total");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
@@ -103,7 +103,7 @@ class EmissaoRepository {
 
   static Future<int> getTotalEmissaoAno(int ano) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Emissao/total/ano/$ano");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/Emissao/total/ano/$ano");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
@@ -118,7 +118,7 @@ class EmissaoRepository {
 
   static Future<int> getTotalEmissaoMesAno(int mes, int ano) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Emissao/total/mes/$mes/ano/$ano");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/Emissao/total/mes/$mes/ano/$ano");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
@@ -133,7 +133,7 @@ class EmissaoRepository {
 
   static Future<int> getTotalEmissaoDiaMesAno(int dia, int mes, int ano) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Emissao/total/dia/$dia/mes/$mes/ano/$ano");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/Emissao/total/dia/$dia/mes/$mes/ano/$ano");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
@@ -148,7 +148,7 @@ class EmissaoRepository {
 
   static Future<EmissaoModel> getUltimaEmissaoAno() async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Emissao/ultimo/ano");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/Emissao/ultimo/ano");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
@@ -165,7 +165,7 @@ class EmissaoRepository {
 
   static Future<EmissaoModel> getUltimaEmissaoMes() async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Emissao/ultimo/mes");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/Emissao/ultimo/mes");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
@@ -182,7 +182,7 @@ class EmissaoRepository {
 
   static Future<EmissaoModel> getUltimaEmissaoDia() async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Emissao/ultimo/dia");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/Emissao/ultimo/dia");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {

@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 class RuaRepository {
   static Future<List<RuaModel>> getRuas() async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Rua");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/api/Rua");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
@@ -22,7 +22,7 @@ class RuaRepository {
 
   static Future<void> createRua(RuaModel rua) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Rua");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/api/Rua");
       final response = await http.post(
         uri,
         body: jsonEncode(rua.toJson()),
@@ -41,7 +41,7 @@ class RuaRepository {
 
   static Future<RuaModel> getRuaById(int id) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Rua/$id");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/api/Rua/$id");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
@@ -58,7 +58,7 @@ class RuaRepository {
 
   static Future<void> updateRua(int id, RuaModel rua) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Rua/$id");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/api/Rua/$id");
       final response = await http.put(
         uri,
         body: jsonEncode(rua.toJson()),
@@ -75,7 +75,7 @@ class RuaRepository {
 
   static Future<RuaModel> getRuaByCEP(String cep) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Rua/$cep");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/api/Rua/$cep");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
@@ -92,7 +92,7 @@ class RuaRepository {
 
   static Future<int> getTotalRuas() async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Rua/Total");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/api/Rua/Total");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
@@ -107,7 +107,7 @@ class RuaRepository {
 
   static Future<int> getTotalRuasAno(int id) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Rua/$id/Ano");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/api/Rua/$id/Ano");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
@@ -122,7 +122,7 @@ class RuaRepository {
 
   static Future<int> getTotalRuasMes(int id) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Rua/$id/Mes");
+      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/api/Rua/$id/Mes");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
