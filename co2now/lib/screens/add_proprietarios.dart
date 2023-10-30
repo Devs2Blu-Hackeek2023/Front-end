@@ -137,7 +137,7 @@ class _AddProprietarioState extends State<AddProprietario> {
                                 } catch (e) {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
-                                      content: Text('Proprietário não cadastrado'),
+                                      content: Text('Proprietário  não cadastrado'),
                                       duration: Duration(seconds: 3)
                                     )
                                   );
