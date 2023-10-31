@@ -23,6 +23,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT_SSH }}
           script: |
+            sudo su - root
             cd ${{ secrets.DEPLOY_DIR }}
             git pull 
             sudo -u ubuntu nginx -s reload
