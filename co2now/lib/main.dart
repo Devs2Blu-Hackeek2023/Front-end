@@ -32,12 +32,12 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const LoginScreen(),
         '/veiculo': (context) => const CarSelectScreen(id:0),
         '/veiculos':(context) => const CarScreen(),
-        '/regions':(context) => const RegionsScreen(),
+        '/regions':(context) => RegionsScreen(isLogged: false),
         '/homeADM': (context) => const HomeScreenAdm(),
         '/addUser': (context) => const AddUsuario(),
         '/addProp':(context) => const AddProprietario(),
-        '/region':(context) => const RegionScreen(),
-        '/street':(context) => StreetScreen(cep: "")
+        '/region':(context) => RegionScreen(isLogged: false),
+        '/street':(context) => StreetScreen(isLogged: false, cep: "")
       },
     );
   }

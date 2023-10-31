@@ -2,7 +2,6 @@
 
  import 'package:co2now/colors/ccolor.dart';
 import 'package:co2now/models/veiculo_model.dart';
-import 'package:co2now/repositories/proprietario_repository.dart';
 import 'package:co2now/repositories/veiculo_repository.dart';
 import 'package:co2now/widgets/side_bar_adm.dart';
 import 'package:flutter/material.dart';
@@ -45,9 +44,10 @@ class HomeScreenAdm extends StatefulWidget {
                 child: Form(
                   key: formKey,
                   child: Padding (
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.only(left: 100),
                     child: Column(
                       children: [
+                        const SizedBox(height: 20),
                         TextFormField(
                           controller: idController,
                           decoration: const InputDecoration(
@@ -226,7 +226,6 @@ class HomeScreenAdm extends StatefulWidget {
                                   combustivel: combustivelController.text, 
                                   kmL: int.parse(kmlController.text), 
                                   proprietarioId: int.parse(proprietarioIdController.text), 
-                                  proprietario: await ProprietarioRepository.getProprietarioById(int.parse(proprietarioIdController.text)), 
                                   modificacoes: modificacoesController.text
                                 );
                                 try {

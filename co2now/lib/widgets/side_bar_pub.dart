@@ -11,25 +11,18 @@ class SideBarPub extends StatelessWidget {
   Widget build(BuildContext context) {
     return SidebarX(
       controller: _controller,
-      theme: SidebarXTheme(
-          decoration: const BoxDecoration(
+      theme: const SidebarXTheme(
+          decoration: BoxDecoration(
             color: Ccolor.verde5,
           ),
-          iconTheme: const IconThemeData(color: Ccolor.fundoBranco),
-          textStyle: const TextStyle(color: Ccolor.fundoBranco),
-          selectedTextStyle: const TextStyle(color: Ccolor.fundoBranco),
-          hoverTextStyle: const TextStyle(color: Ccolor.fundoBranco),
-          itemTextPadding: const EdgeInsets.only(left: 30),
-          selectedItemTextPadding: const EdgeInsets.only(left: 30),
-          selectedIconTheme: const IconThemeData(color: Ccolor.fundoBranco),
-          selectedItemDecoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(
-              color: Ccolor.cinza.withOpacity(0.37),
-            ),
-            gradient:
-                const LinearGradient(colors: [Ccolor.verde4, Ccolor.verde3]),
-          )),
+          iconTheme: IconThemeData(color: Ccolor.fundoBranco),
+          textStyle: TextStyle(color: Ccolor.fundoBranco),
+          selectedTextStyle: TextStyle(color: Ccolor.fundoBranco),
+          hoverTextStyle: TextStyle(color: Ccolor.fundoBranco),
+          itemTextPadding: EdgeInsets.only(left: 30),
+          selectedItemTextPadding: EdgeInsets.only(left: 30),
+          selectedIconTheme: IconThemeData(color: Ccolor.fundoBranco),
+          ),
       extendedTheme: const SidebarXTheme(width: 140),
       headerBuilder: (context, extended) {
         return SizedBox(

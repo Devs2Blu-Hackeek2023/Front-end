@@ -11,13 +11,14 @@ class VeiculoRepository {
 
       if (response.statusCode == 200) {
         List<dynamic> data = jsonDecode(response.body);
-        List<VeiculoModel> veiculos = data.map((e) => VeiculoModel.fromJson(e)).toList();
+        List<VeiculoModel> veiculos =
+            data.map((e) => VeiculoModel.fromJson(e)).toList();
         return veiculos;
       } else {
-        throw("Erro ao obter veículos. Status Code: ${response.statusCode}");
+        throw ("Erro ao obter veículos. Status Code: ${response.statusCode}");
       }
     } catch (e) {
-      throw("Erro ao fazer a solicitação HTTP: $e");
+      throw ("Erro ao fazer a solicitação HTTP: $e");
     }
   }
 
@@ -31,10 +32,10 @@ class VeiculoRepository {
         VeiculoModel veiculo = VeiculoModel.fromJson(data);
         return veiculo;
       } else {
-        throw("Erro ao obter o veículo. Status Code: ${response.statusCode}");
+        throw ("Erro ao obter o veículo. Status Code: ${response.statusCode}");
       }
     } catch (e) {
-      throw("Erro ao fazer a solicitação HTTP: $e");
+      throw ("Erro ao fazer a solicitação HTTP: $e");
     }
   }
 
@@ -43,38 +44,53 @@ class VeiculoRepository {
       Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Veiculo/$id");
       final response = await http.put(
         uri,
-        body: jsonEncode(veiculo.toJson()),
+        body: jsonEncode({
+          "id": veiculo.id,
+          "placa": veiculo.placa,
+          "modelo": veiculo.modelo,
+          "ano": veiculo.ano,
+          "marca": veiculo.marca,
+          "categoria": veiculo.categoria,
+          "motor": veiculo.motor,
+          "combustivel": veiculo.combustivel,
+          "kmL": veiculo.kmL,
+          "modificacoes": veiculo.modificacoes,
+          "proprietarioId": veiculo.proprietarioId,
+        }),
         headers: {'Content-Type': 'application/json'},
       );
 
-      if (response.statusCode != 204) {
-        throw("Erro ao atualizar o veículo. Status Code: ${response.statusCode}");
+      if (response.statusCode != 200) {
+        throw ("Erro ao atualizar o veículo. Status Code: ${response.statusCode}");
       }
     } catch (e) {
-      throw("Erro ao fazer a solicitação HTTP: $e");
+      throw ("Erro ao fazer a solicitação HTTP: $e");
     }
   }
 
   static Future<List<EmissaoModel>> getEmissaoByVeiculoId(int id) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Veiculo/emissao/veiculo/$id/6meses");
+      Uri uri = Uri.parse(
+          "https://api.co2now.devs2blu.dev.br/Veiculo/emissao/veiculo/$id/6meses");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
         List<dynamic> data = jsonDecode(response.body);
-        List<EmissaoModel> emissoes = data.map((e) => EmissaoModel.fromJson(e)).toList();
+        List<EmissaoModel> emissoes =
+            data.map((e) => EmissaoModel.fromJson(e)).toList();
         return emissoes;
       } else {
-        throw("Erro ao obter emissões do veículo. Status Code: ${response.statusCode}");
+        throw ("Erro ao obter emissões do veículo. Status Code: ${response.statusCode}");
       }
     } catch (e) {
-      throw("Erro ao fazer a solicitação HTTP: $e");
+      throw ("Erro ao fazer a solicitação HTTP: $e");
     }
   }
 
   static Future<VeiculoModel> getVeiculoByPlaca(String placa) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Veiculo/Placa/$placa");
+      Uri uri =
+          Uri.parse("https://api.co2now.devs2blu.dev.br/Veiculo/Placa/$placa");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
@@ -82,10 +98,10 @@ class VeiculoRepository {
         VeiculoModel veiculo = VeiculoModel.fromJson(data);
         return veiculo;
       } else {
-        throw("Erro ao obter o veículo pela placa. Status Code: ${response.statusCode}");
+        throw ("Erro ao obter o veículo pela placa. Status Code: ${response.statusCode}");
       }
     } catch (e) {
-      throw("Erro ao fazer a solicitação HTTP: $e");
+      throw ("Erro ao fazer a solicitação HTTP: $e");
     }
   }
 }

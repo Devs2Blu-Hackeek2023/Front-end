@@ -1,5 +1,9 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:co2now/bar_graph/bar_graph_streets/bar_graph_street.dart';
 import 'package:co2now/colors/ccolor.dart';
+import 'package:co2now/screens/street_screen.dart';
+import 'package:co2now/widgets/side_bar_pub.dart';
 import 'package:flutter/material.dart';
 import 'package:co2now/widgets/side_bar.dart';
 import 'package:sidebarx/sidebarx.dart';
@@ -7,7 +11,8 @@ import 'package:sidebarx/sidebarx.dart';
 const List<String> list = <String>['One', 'Two', 'Three', 'Four'];
 
 class RegionScreen extends StatefulWidget {
-  const RegionScreen({super.key});
+  bool isLogged;
+  RegionScreen({super.key, required this.isLogged});
 
   @override
   State<RegionScreen> createState() => _RegionScreenState();
@@ -45,8 +50,10 @@ class _RegionScreenState extends State<RegionScreen> {
                             borderRadius: BorderRadius.circular(10)
                           ),
                           suffixIcon: IconButton(icon: const Icon(Icons.search), onPressed: () {
-                            // Future<RuaModel> rua = RuaRepository.getRuaByCEP(cep.text);
-                            Navigator.pushReplacementNamed(context, '/street');
+                            Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => StreetScreen(
+                                      cep: cep.text,
+                                      isLogged: widget.isLogged)));
                           },),
                           labelText: 'CEP'
                         ), 
@@ -163,7 +170,7 @@ class _RegionScreenState extends State<RegionScreen> {
           ),
           Row(
             children: [
-              SideBar(controller: _controller),
+              widget.isLogged ? SideBar(controller: _controller) : SideBarPub(controller: _controller),
             ]
           )
         ],
