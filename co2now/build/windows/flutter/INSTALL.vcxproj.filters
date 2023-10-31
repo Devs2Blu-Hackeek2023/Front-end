@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\dickm\OneDrive\Área de Trabalho\+devs2Blu-hackweek2023\Front-end\co2now\build\windows\CMakeFiles\28bba6f2c12f3428c1e621b6610a9355\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{F2DB2D7F-7A1C-356A-9FCD-CE19CC684F0D}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
