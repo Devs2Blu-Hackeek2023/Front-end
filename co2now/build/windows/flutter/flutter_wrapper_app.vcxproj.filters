@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\dickm\OneDrive\Área de Trabalho\+devs2Blu-hackweek2023\Front-end\co2now\windows\flutter\ephemeral\cpp_client_wrapper\core_implementations.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\dickm\OneDrive\Área de Trabalho\+devs2Blu-hackweek2023\Front-end\co2now\windows\flutter\ephemeral\cpp_client_wrapper\standard_codec.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\dickm\OneDrive\Área de Trabalho\+devs2Blu-hackweek2023\Front-end\co2now\windows\flutter\ephemeral\cpp_client_wrapper\flutter_engine.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\dickm\OneDrive\Área de Trabalho\+devs2Blu-hackweek2023\Front-end\co2now\windows\flutter\ephemeral\cpp_client_wrapper\flutter_view_controller.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\dickm\OneDrive\Área de Trabalho\+devs2Blu-hackweek2023\Front-end\co2now\windows\flutter\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{F2DB2D7F-7A1C-356A-9FCD-CE19CC684F0D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{270F2B61-15D6-3479-974E-3370B846FD73}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

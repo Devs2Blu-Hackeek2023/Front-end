@@ -1,0 +1,28 @@
+^C:\USERS\DICKM\ONEDRIVE\ÁREA DE TRABALHO\+DEVS2BLU-HACKWEEK2023\FRONT-END\CO2NOW\BUILD\WINDOWS\CMAKEFILES\E2E7EDECCA1ABD1404C715BAFD287E67\FLUTTER_WINDOWS.DLL.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\Users\dickm\flutter "PROJECT_DIR=C:\Users\dickm\OneDrive\Área de Trabalho\+devs2Blu-hackweek2023\Front-end\co2now" FLUTTER_ROOT=C:\Users\dickm\flutter "FLUTTER_EPHEMERAL_DIR=C:\Users\dickm\OneDrive\Área de Trabalho\+devs2Blu-hackweek2023\Front-end\co2now\windows\flutter\ephemeral" "PROJECT_DIR=C:\Users\dickm\OneDrive\Área de Trabalho\+devs2Blu-hackweek2023\Front-end\co2now" "FLUTTER_TARGET=C:\Users\dickm\OneDrive\Área de Trabalho\+devs2Blu-hackweek2023\Front-end\co2now\lib\main.dart" DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==,RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC9hNzk0Y2YyNjgxYzZjOWZlN2IyNjBlMGU4NGRlOTYyOThkYzljMThiLw== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false "PACKAGE_CONFIG=C:\Users\dickm\OneDrive\Área de Trabalho\+devs2Blu-hackweek2023\Front-end\co2now\.dart_tool\package_config.json" C:/Users/dickm/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\DICKM\ONEDRIVE\ÁREA DE TRABALHO\+DEVS2BLU-HACKWEEK2023\FRONT-END\CO2NOW\BUILD\WINDOWS\CMAKEFILES\28BBA6F2C12F3428C1E621B6610A9355\FLUTTER_ASSEMBLE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\DICKM\ONEDRIVE\ÁREA DE TRABALHO\+DEVS2BLU-HACKWEEK2023\FRONT-END\CO2NOW\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SC:/Users/dickm/OneDrive/Área de Trabalho/+devs2Blu-hackweek2023/Front-end/co2now/windows" "-BC:/Users/dickm/OneDrive/Área de Trabalho/+devs2Blu-hackweek2023/Front-end/co2now/build/windows" --check-stamp-file "C:/Users/dickm/OneDrive/Área de Trabalho/+devs2Blu-hackweek2023/Front-end/co2now/build/windows/flutter/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
