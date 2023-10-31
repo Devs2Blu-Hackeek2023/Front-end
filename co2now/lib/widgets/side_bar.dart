@@ -1,6 +1,7 @@
 import 'package:co2now/colors/ccolor.dart';
 import 'package:co2now/icons/cicons.dart';
 import 'package:co2now/screens/home_screen.dart';
+import 'package:co2now/screens/regions_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:sidebarx/sidebarx.dart';
 
@@ -11,7 +12,6 @@ class SideBar extends StatelessWidget {
   final SidebarXController _controller;
   @override
   Widget build(BuildContext context) {
-    final ValueNotifier<int> selectedPage = ValueNotifier<int>(0);
     return SidebarX(
       controller: _controller,
       theme: const SidebarXTheme(
@@ -41,8 +41,7 @@ class SideBar extends StatelessWidget {
           icon: Icons.home,
           label: "Home",
           onTap: () {
-            selectedPage.value = 0;
-            Navigator.pushReplacementNamed(context, "/home");
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeScreen(isLogged: true)));
           },
         ),
         SidebarXItem(
@@ -56,7 +55,7 @@ class SideBar extends StatelessWidget {
           icon: Icons.location_on,
           label: "Regions",
           onTap: () {
-            Navigator.pushReplacementNamed(context, "/regions");
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => RegionsScreen(isLogged: true)));
           }
         ),
       ],

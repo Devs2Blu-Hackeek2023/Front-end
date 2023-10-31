@@ -5,6 +5,7 @@
 
 import 'package:co2now/line_graph/line_graph_street.dart';
 import 'package:co2now/widgets/informations.dart';
+import 'package:co2now/widgets/side_bar_pub.dart';
 import 'package:flutter/material.dart';
 import 'package:co2now/widgets/side_bar.dart';
 import 'package:sidebarx/sidebarx.dart';
@@ -12,8 +13,9 @@ import 'package:sidebarx/sidebarx.dart';
 const List<String> list = <String>['One', 'Two', 'Three', 'Four'];
 
 class StreetScreen extends StatefulWidget {
+  bool isLogged;
   String cep;
-  StreetScreen({Key? key, required this.cep}) : super(key: key);
+  StreetScreen({Key? key, required this.cep, required this.isLogged}) : super(key: key);
 
   @override
   State<StreetScreen> createState() => _StreetScreenState();
@@ -85,7 +87,7 @@ class _StreetScreenState extends State<StreetScreen> {
             ),
           ),
           Row(children: [
-            SideBar(controller: _controller),
+            widget.isLogged ? SideBar(controller: _controller) : SideBarPub(controller: _controller),
           ])
         ],
       ),

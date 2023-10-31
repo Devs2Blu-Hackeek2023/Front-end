@@ -36,12 +36,14 @@ class _AddUsuarioState extends State<AddUsuario> {
             child: Form(
               key: formKey,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.only(left: 100),
                 child: Column(
                   children: [
+                    const SizedBox(height: 20),
                     TextFormField(
                       controller: nomeController,
                       decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
                         labelText: 'Nome',
                       ),
                       validator: (value) {
@@ -55,6 +57,7 @@ class _AddUsuarioState extends State<AddUsuario> {
                     TextFormField(
                       controller: usernameController,
                       decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
                         labelText: 'Username',
                       ),
                       validator: (value) {
@@ -68,6 +71,7 @@ class _AddUsuarioState extends State<AddUsuario> {
                     TextFormField(
                       controller: senhaController,
                       decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
                         labelText: 'Senha',
                       ),
                       validator: (value) {
@@ -81,6 +85,7 @@ class _AddUsuarioState extends State<AddUsuario> {
                     TextFormField(
                       controller: roleController,
                       decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
                         labelText: 'Cargo',
                       ),
                     ),
