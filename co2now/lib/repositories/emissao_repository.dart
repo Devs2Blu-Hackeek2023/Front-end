@@ -3,25 +3,6 @@ import 'package:co2now/models/emissao_model.dart';
 import 'package:http/http.dart' as http;
 
 class EmissaoRepository {
-  static Future<void> createEmissao(EmissaoModel emissao) async {
-    try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Emissao");
-      final response = await http.post(
-        uri,
-        body: jsonEncode(emissao.toJson()),
-        headers: {'Content-Type': 'application/json'},
-      );
-
-      if (response.statusCode == 201) {
-        // Emissão criada com sucesso
-      } else {
-        throw("Erro ao criar uma nova emissão. Status Code: ${response.statusCode}");
-      }
-    } catch (e) {
-      throw("Erro ao fazer a solicitação HTTP: $e");
-    }
-  }
-
   static Future<List<EmissaoModel>> getEmissao() async {
     try {
       Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Emissao");
@@ -39,19 +20,6 @@ class EmissaoRepository {
     }
   }
 
-  static Future<void> deleteEmissao(int id) async {
-    try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Emissao/$id");
-      final response = await http.delete(uri);
-
-      if (response.statusCode != 204) {
-        throw("Erro ao excluir a emissão. Status Code: ${response.statusCode}");
-      }
-    } catch (e) {
-      throw("Erro ao fazer a solicitação HTTP: $e");
-    }
-  }
-
   static Future<EmissaoModel> getEmissaoById(int id) async {
     try {
       Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Emissao/$id");
@@ -63,23 +31,6 @@ class EmissaoRepository {
         return emissao;
       } else {
         throw("Erro ao obter a emissão. Status Code: ${response.statusCode}");
-      }
-    } catch (e) {
-      throw("Erro ao fazer a solicitação HTTP: $e");
-    }
-  }
-
-  static Future<void> updateEmissao(int id, EmissaoModel emissao) async {
-    try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Emissao/$id");
-      final response = await http.put(
-        uri,
-        body: jsonEncode(emissao.toJson()),
-        headers: {'Content-Type': 'application/json'},
-      );
-
-      if (response.statusCode != 204) {
-        throw("Erro ao atualizar a emissão. Status Code: ${response.statusCode}");
       }
     } catch (e) {
       throw("Erro ao fazer a solicitação HTTP: $e");
