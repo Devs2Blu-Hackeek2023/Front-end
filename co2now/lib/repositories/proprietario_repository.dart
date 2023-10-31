@@ -3,26 +3,9 @@ import 'package:co2now/models/proprietario_model.dart';
 import 'package:http/http.dart' as http;
 
 class ProprietarioRepository {
-  static Future<List<ProprietarioModel>> getProprietarios() async {
-    try {
-      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/api/Proprietario");
-      final response = await http.get(uri);
-
-      if (response.statusCode == 200) {
-        List<dynamic> data = jsonDecode(response.body);
-        List<ProprietarioModel> proprietarios = data.map((e) => ProprietarioModel.fromJson(e)).toList();
-        return proprietarios;
-      } else {
-        throw("Erro ao obter proprietários. Status Code: ${response.statusCode}");
-      }
-    } catch (e) {
-      throw("Erro ao fazer a solicitação HTTP: $e");
-    }
-  }
-
   static Future<void> createProprietario(ProprietarioModel proprietario) async {
     try {
-      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/api/Proprietario");
+      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Proprietario");
       final response = await http.post(
         uri,
         body: jsonEncode(proprietario.toJson()),
@@ -41,7 +24,7 @@ class ProprietarioRepository {
 
   static Future<ProprietarioModel> getProprietarioById(int id) async {
     try {
-      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/api/Proprietario/$id");
+      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Proprietario/Id?Id=$id");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
@@ -56,16 +39,4 @@ class ProprietarioRepository {
     }
   }
 
-  static Future<void> deleteProprietario(int id) async {
-    try {
-      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/api/Proprietario/$id");
-      final response = await http.delete(uri);
-
-      if (response.statusCode != 204) {
-        throw("Erro ao excluir o proprietário. Status Code: ${response.statusCode}");
-      }
-    } catch (e) {
-      throw("Erro ao fazer a solicitação HTTP: $e");
-    }
-  }
 }

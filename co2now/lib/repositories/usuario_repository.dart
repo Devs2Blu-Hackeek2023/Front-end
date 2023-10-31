@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 class UsuarioRepository {
   static Future<void> createUsuario(UsuarioModel usuario) async {
     try {
-      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/api/Usuario");
+      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Usuario");
       final response = await http.post(
         uri,
         body: jsonEncode(usuario.toJson()),
@@ -22,9 +22,31 @@ class UsuarioRepository {
     }
   }
 
+  static Future<void> loginUser(String username, String password) async {
+    try {
+      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Login");
+      final response = await http.post(
+        uri,
+        body: jsonEncode({
+          "username": username,
+          "password": password,
+        }),
+        headers: {'Content-Type': 'application/json'},
+      );
+
+      if (response.statusCode == 200) {
+        // Login bem-sucedido
+      } else {
+        throw("Erro ao fazer login. Status Code: ${response.statusCode}");
+      }
+    } catch (e) {
+      throw("Erro ao fazer a solicitação HTTP: $e");
+    }
+  }
+
   static Future<UsuarioModel> getUsuarioById(int id) async {
     try {
-      Uri uri = Uri.parse("https://co2now.devs2blu.dev.br/api/Usuario/$id");
+      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Usuario/$id");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
