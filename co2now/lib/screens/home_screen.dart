@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:co2now/colors/ccolor.dart';
 import 'package:co2now/widgets/gerar_graph.dart';
 import 'package:co2now/widgets/side_bar.dart';
 import 'package:co2now/widgets/side_bar_pub.dart';
@@ -28,6 +29,16 @@ class _HomeScreenState extends State<HomeScreen> {
               child: const Column(
                 mainAxisSize: MainAxisSize.min, 
                 children: [
+                Padding(
+                  padding: EdgeInsets.only(right: 90),
+                  child: Text('Regiões', style: TextStyle(
+                    color: Ccolor.cinza,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
                 GerarGrafico(regionSummary: [
                   4.40, //Norte
                   42.42, //Oeste
@@ -39,11 +50,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Information(text: 'Horário de maior\n        emissão'),
-                    Information(text: 'Modelo de carro\n que mais emite'),
-                    Information(
-                        text:
-                            '   Esse mês teve mais \nemissão que o mês passado'),
+                    Information(text: 'Horário de maior\nemissão'),
+                    Information(text: 'Modelo de carro\nque mais emite'),
+                    Information(text: 'Esse mês teve mais\nemissão que o mês passado'),
                   ],
                 )
               ]),

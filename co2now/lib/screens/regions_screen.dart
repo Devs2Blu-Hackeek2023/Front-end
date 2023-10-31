@@ -22,7 +22,7 @@ class _RegionsScreenState extends State<RegionsScreen> {
         children: [
           SizedBox(
             child: Padding(
-              padding: const EdgeInsets.only(left: 230, top: 20, bottom: 50),
+              padding: const EdgeInsets.only(left: 280, top: 30, bottom: 0, right: 90),
               child: Column(
                 children: [
                   SizedBox(
@@ -34,7 +34,7 @@ class _RegionsScreenState extends State<RegionsScreen> {
                         ),
                         suffixIcon: IconButton(icon: const Icon(Icons.search), onPressed: () {
                           // Future<RuaModel> rua = RuaRepository.getRuaByCEP(cep.text);
-                          Navigator.pushReplacementNamed(context, '/');
+                          Navigator.pushReplacementNamed(context, '/street');
                         },),
                         labelText: 'CEP'
                       ), 

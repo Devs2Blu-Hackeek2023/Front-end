@@ -28,7 +28,7 @@ class _StreetScreenState extends State<StreetScreen> {
         children: [
           SizedBox(
             child: Padding(
-              padding: const EdgeInsets.only(left: 230, top: 20, bottom: 50),
+              padding: const EdgeInsets.only(left: 200, top: 30, bottom: 0, right: 90),
               child: Column(
                 children: [
                   SizedBox(
@@ -40,7 +40,7 @@ class _StreetScreenState extends State<StreetScreen> {
                         ),
                         suffixIcon: IconButton(icon: const Icon(Icons.search), onPressed: () {
                           // Future<RuaModel> rua = RuaRepository.getRuaByCEP(cep.text);
-                          Navigator.pushReplacementNamed(context, '/');
+                          Navigator.pushReplacementNamed(context, '/street');
                         },),
                         labelText: 'CEP'
                       ), 
@@ -50,7 +50,7 @@ class _StreetScreenState extends State<StreetScreen> {
                     height: 30,
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height - 300,
+                    height: MediaQuery.of(context).size.height - 317,
                     child: const Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -58,7 +58,7 @@ class _StreetScreenState extends State<StreetScreen> {
                           width: 625,
                           height: 415,
                           child: Padding(
-                            padding: EdgeInsets.all(15.0),
+                            padding: EdgeInsets.all(5.0),
                             child: LineGraphStreet(),
                           )
                         )
@@ -68,8 +68,8 @@ class _StreetScreenState extends State<StreetScreen> {
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Information(text: 'Horário de maior\n        emissão'),
-                      Information(text: 'Modelo de carro\n que mais emite'),
+                      Information(text: 'Horário de maior\nemissão'),
+                      Information(text: 'Modelo de carro\nque mais emite'),
                     ],
                   )
                 ],
