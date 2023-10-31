@@ -1,6 +1,9 @@
 // import 'package:co2now/models/rua_model.dart';
 // import 'package:co2now/repositories/rua_repository.dart';
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:co2now/colors/ccolor.dart';
+import 'package:co2now/screens/street_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:co2now/widgets/side_bar.dart';
 import 'package:sidebarx/sidebarx.dart';
@@ -28,13 +31,13 @@ class _RegionsScreenState extends State<RegionsScreen> {
                   SizedBox(
                     width: 1000,
                     child: TextField(  
+                      controller: cep,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10)
                         ),
-                        suffixIcon: IconButton(icon: const Icon(Icons.search), onPressed: () {
-                          // Future<RuaModel> rua = RuaRepository.getRuaByCEP(cep.text);
-                          Navigator.pushReplacementNamed(context, '/street');
+                        suffixIcon: IconButton(icon: const Icon(Icons.search), onPressed: () async {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => StreetScreen(cep: cep.text)));
                         },),
                         labelText: 'CEP'
                       ), 
