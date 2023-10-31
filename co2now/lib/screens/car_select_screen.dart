@@ -2,6 +2,7 @@
 import 'package:co2now/icons/cicons.dart';
 import 'package:co2now/line_graph/line_graph.dart';
 import 'package:co2now/widgets/information_car.dart';
+import 'package:co2now/widgets/mostrar_carros.dart';
 import 'package:co2now/widgets/side_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:sidebarx/sidebarx.dart';
@@ -16,6 +17,7 @@ class CarSelectScreen extends StatefulWidget {
 
 class _CarSelectScreenState extends State<CarSelectScreen> {
   final _controller = SidebarXController(selectedIndex: 0, extended: false);
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold( 
@@ -89,7 +91,7 @@ class _CarSelectScreenState extends State<CarSelectScreen> {
                                       padding: EdgeInsets.all(15.0),
                                       child: LineGraph(),
                                     )
-                                  )
+                                  ),
                                 ],
                             ),
                           ),
@@ -103,6 +105,8 @@ class _CarSelectScreenState extends State<CarSelectScreen> {
                       color: Ccolor.verde3,
                       height: double.infinity,
                       width: 240,
+                      child: const MostrarCarro(),
+
                     )
                   ],
                 )
