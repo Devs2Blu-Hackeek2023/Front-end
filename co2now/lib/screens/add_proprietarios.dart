@@ -34,13 +34,14 @@ class _AddProprietarioState extends State<AddProprietario> {
             child: Form(
               key: fKey,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.only(left: 100),
                 child: Column(
                   children: [
                     const SizedBox(height: 20),
                     TextFormField(
                       controller: nomeController,
                       decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
                         labelText: 'Nome',
                       ),
                       validator: (value) {
@@ -54,6 +55,7 @@ class _AddProprietarioState extends State<AddProprietario> {
                     TextFormField(
                       controller: cpfController,
                       decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
                         labelText: 'CPF',
                       ),
                       validator: (value) {
@@ -67,6 +69,7 @@ class _AddProprietarioState extends State<AddProprietario> {
                     TextFormField(
                       controller: cnhController,
                       decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
                         labelText: 'CNH',
                       ),
                       validator: (value) {
@@ -80,6 +83,7 @@ class _AddProprietarioState extends State<AddProprietario> {
                     TextFormField(
                       controller: usuarioIdController,
                       decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
                         labelText: 'Usuário ID',
                       ),
                     ),
