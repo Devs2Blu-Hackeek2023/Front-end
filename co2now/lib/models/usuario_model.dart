@@ -1,33 +1,33 @@
 class UsuarioModel {
-  late int id;
+  int? id;
   late String nome;
-  late String userName;
-  late String passwordHash;
-  late String role;
+  late String username;
+  late String password;
+  String? cargo;
 
   UsuarioModel({
-    required this.id,
+    this.id,
     required this.nome,
-    required this.userName,
-    required this.passwordHash,
-    required this.role,
+    required this.username,
+    required this.password,
+    this.cargo,
   });
 
   UsuarioModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     nome = json['nome'];
-    userName = json['userName'];
-    passwordHash = json['passwordHash'];
-    role = json['role'];
+    username = json['username'];
+    password = json['password'];
+    cargo = json['cargo'];
   }
 
   Map<String, dynamic> toJson() {
     return {
       'id': id,
       'nome': nome,
-      'userName': userName,
-      'passwordHash': passwordHash,
-      'role': role,
+      'username': username,
+      'password': password,
+      'cargo': cargo,
     };
   }
 }

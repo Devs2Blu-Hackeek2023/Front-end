@@ -12,10 +12,10 @@ class UsuarioRepository {
         headers: {'Content-Type': 'application/json'},
       );
 
-      if (response.statusCode == 201) {
+      if (response.statusCode == 200) {
         // Usuário criado com sucesso
       } else {
-        throw("Erro ao criar um novo usuário. Status Code: ${response.statusCode}");
+        throw("Erro ao criar um novo usuário. Status Code: ${response.body}");
       }
     } catch (e) {
       throw("Erro ao fazer a solicitação HTTP: $e");

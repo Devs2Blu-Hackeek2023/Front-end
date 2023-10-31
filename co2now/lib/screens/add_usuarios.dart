@@ -20,7 +20,7 @@ class _AddUsuarioState extends State<AddUsuario> {
   final _controller = SidebarXController(selectedIndex: 0, extended: false);
   TextEditingController idController = TextEditingController();
   TextEditingController nomeController = TextEditingController();
-  TextEditingController userNameController = TextEditingController();
+  TextEditingController usernameController = TextEditingController();
   TextEditingController senhaController = TextEditingController();
   TextEditingController roleController = TextEditingController();
 
@@ -40,19 +40,6 @@ class _AddUsuarioState extends State<AddUsuario> {
                 child: Column(
                   children: [
                     TextFormField(
-                      controller: idController,
-                      decoration: const InputDecoration(
-                        labelText: 'ID',
-                      ),
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return 'O ID é obrigatório';
-                        }
-                        return null;
-                      }
-                    ),
-                    const SizedBox(height: 20),
-                    TextFormField(
                       controller: nomeController,
                       decoration: const InputDecoration(
                         labelText: 'Nome',
@@ -66,7 +53,7 @@ class _AddUsuarioState extends State<AddUsuario> {
                     ),
                     const SizedBox(height: 20),
                     TextFormField(
-                      controller: userNameController,
+                      controller: usernameController,
                       decoration: const InputDecoration(
                         labelText: 'Username',
                       ),
@@ -96,12 +83,6 @@ class _AddUsuarioState extends State<AddUsuario> {
                       decoration: const InputDecoration(
                         labelText: 'Cargo',
                       ),
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return 'O cargo é obrigatório';
-                        }
-                        return null;
-                      }
                     ),
                     const SizedBox(height: 20),
                     SizedBox(
@@ -117,12 +98,12 @@ class _AddUsuarioState extends State<AddUsuario> {
                             ),
                             onPressed: () async {
                               if (formKey.currentState!.validate()) {
-                                UsuarioModel usuario = UsuarioModel(
-                                  id: int.parse(idController.text), 
+                                UsuarioModel usuario = UsuarioModel( 
+                                  id: 0,
                                   nome: nomeController.text, 
-                                  userName: userNameController.text, 
-                                  passwordHash: senhaController.text,  
-                                  role: roleController.text
+                                  username: usernameController.text, 
+                                  password: senhaController.text,  
+                                  cargo: roleController.text
                                 );
                                 try {
                                   await UsuarioRepository.createUsuario(usuario);

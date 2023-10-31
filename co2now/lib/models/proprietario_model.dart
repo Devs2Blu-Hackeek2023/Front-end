@@ -1,20 +1,20 @@
 import 'package:co2now/models/usuario_model.dart';
 
 class ProprietarioModel {
-  late int id;
+  int? id;
   late String nomeCompleto;
   late String cpf;
   late String cnh;
   late int usuarioId;
-  late UsuarioModel usuario;
+  UsuarioModel? usuario;
 
   ProprietarioModel({
-    required this.id,
+    this.id,
     required this.nomeCompleto,
     required this.cpf,
     required this.cnh,
     required this.usuarioId,
-    required this.usuario,
+    this.usuario,
   });
 
   ProprietarioModel.fromJson(Map<String, dynamic> json) {
@@ -33,7 +33,7 @@ class ProprietarioModel {
       'cpf': cpf,
       'cnh': cnh,
       'usuarioId': usuarioId,
-      'usuario': usuario.toJson(),
+      'usuario': usuario!.toJson(),
     };
   }
 }

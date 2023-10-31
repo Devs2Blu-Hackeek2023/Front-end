@@ -26,53 +26,57 @@ class _StreetScreenState extends State<StreetScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          SizedBox(
-            child: Padding(
-              padding: const EdgeInsets.only(left: 200, top: 30, bottom: 0, right: 90),
-              child: Column(
-                children: [
-                  SizedBox(
-                    width: 1000,
-                    child: TextField(  
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10)
-                        ),
-                        suffixIcon: IconButton(icon: const Icon(Icons.search), onPressed: () {
-                          // Future<RuaModel> rua = RuaRepository.getRuaByCEP(cep.text);
-                          Navigator.pushReplacementNamed(context, '/street');
-                        },),
-                        labelText: 'CEP'
-                      ), 
+          SingleChildScrollView(
+            child: SizedBox(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 200, top: 30, bottom: 0, right: 90),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      width: 1000,
+                      child: TextField(  
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10)
+                          ),
+                          suffixIcon: IconButton(icon: const Icon(Icons.search), onPressed: () {
+                            // Future<RuaModel> rua = RuaRepository.getRuaByCEP(cep.text);
+                            Navigator.pushReplacementNamed(context, '/street');
+                          },),
+                          labelText: 'CEP'
+                        ), 
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height - 317,
-                    child: const Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        SizedBox(
-                          width: 625,
-                          height: 415,
-                          child: Padding(
-                            padding: EdgeInsets.all(5.0),
-                            child: LineGraphStreet(),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height - 317,
+                      child: const Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          SizedBox(
+                            width: 625,
+                            height: 415,
+                            child: Padding(
+                              padding: EdgeInsets.all(5.0),
+                              child: LineGraphStreet(),
+                            )
                           )
-                        )
-                      ]
-                    )
-                  ),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Information(text: 'Horário de maior\nemissão'),
-                      Information(text: 'Modelo de carro\nque mais emite'),
-                    ],
-                  )
-                ],
+                        ]
+                      )
+                    ),
+                    const SizedBox(height: 20),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Information(text: 'Horário de maior\nemissão'),
+                        Information(text: 'Modelo de carro\nque mais emite'),
+                      ],
+                    ),
+                    const SizedBox(height: 20)
+                  ],
+                ),
               ),
             ),
           ),

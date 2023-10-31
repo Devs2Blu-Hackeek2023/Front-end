@@ -1,5 +1,9 @@
+// ignore_for_file: avoid_print, use_build_context_synchronously
+
 import 'package:co2now/colors/ccolor.dart';
+import 'package:co2now/repositories/usuario_repository.dart';
 import 'package:co2now/screens/home_screen.dart';
+import 'package:co2now/screens/home_screen_adm.dart';
 import 'package:co2now/widgets/login_form.dart';
 import 'package:flutter/material.dart';
 
@@ -48,17 +52,28 @@ class _LoginScreenState extends State<LoginScreen> {
                     "Login",
                     style: TextStyle(color: Ccolor.fundoBranco),
                   ),
-                  onPressed: () {
+                  onPressed: () async {
                     if (formKey.currentState!.validate()) {
                       setState(() {
                         loginFailed = false;
                         authentication = true;
-                        Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) =>
-                              HomeScreen(isLogged: authentication),
-                        ));
                       });
                       formKey.currentState!.save();
+                      try {
+                        await UsuarioRepository.loginUser(
+                            cpfController.text, senhaController.text);
+
+                        if (cpfController.text == "11873423942" && senhaController.text == "admin123") {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HomeScreenAdm()));
+                        } else {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeScreen(isLogged: authentication,)));
+                        }
+                      } catch (e) {
+                        setState(() {
+                          loginFailed = true;
+                        });
+                        print("Erro ao fazer login: $e");
+                      }
                     } else {
                       setState(() {
                         loginFailed = true;

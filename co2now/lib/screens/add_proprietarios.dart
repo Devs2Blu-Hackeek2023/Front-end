@@ -1,9 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:co2now/colors/ccolor.dart';
-import 'package:co2now/models/proprietario_model.dart';
 import 'package:co2now/repositories/proprietario_repository.dart';
-import 'package:co2now/repositories/usuario_repository.dart';
 import 'package:co2now/widgets/side_bar_adm.dart';
 import 'package:flutter/material.dart';
 import 'package:sidebarx/sidebarx.dart';
@@ -16,10 +14,9 @@ class AddProprietario extends StatefulWidget {
 }
 
 class _AddProprietarioState extends State<AddProprietario> {
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  GlobalKey<FormState> fKey = GlobalKey<FormState>();
+  GlobalKey<ScaffoldState> sKey = GlobalKey<ScaffoldState>();
   final _controller = SidebarXController(selectedIndex: 0, extended: false);
-  TextEditingController idController = TextEditingController();
   TextEditingController nomeController = TextEditingController();
   TextEditingController cpfController = TextEditingController();
   TextEditingController cnhController = TextEditingController();
@@ -28,30 +25,18 @@ class _AddProprietarioState extends State<AddProprietario> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: formKey,
+      key: sKey,
       body: Row(
         children: [
           SideBarAdm(controller: _controller),
           SizedBox(
             width: (MediaQuery.of(context).size.width / 1.2),
             child: Form(
-              key: formKey,
+              key: fKey,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   children: [
-                    TextFormField(
-                      controller: idController,
-                      decoration: const InputDecoration(
-                        labelText: 'ID',
-                      ),
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return 'O ID é obrigatório';
-                        }
-                        return null;
-                      }
-                    ),
                     const SizedBox(height: 20),
                     TextFormField(
                       controller: nomeController,
@@ -97,12 +82,6 @@ class _AddProprietarioState extends State<AddProprietario> {
                       decoration: const InputDecoration(
                         labelText: 'Usuário ID',
                       ),
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return 'O usuário ID é obrigatório';
-                        }
-                        return null;
-                      }
                     ),
                     const SizedBox(height: 20),
                     SizedBox(
@@ -117,17 +96,9 @@ class _AddProprietarioState extends State<AddProprietario> {
                               style: TextStyle(color: Ccolor.fundoBranco),
                             ),
                             onPressed: () async {
-                              if (formKey.currentState!.validate()) {
-                                ProprietarioModel proprietario = ProprietarioModel(
-                                  id: int.parse(idController.text), 
-                                  nomeCompleto: nomeController.text, 
-                                  cpf: cpfController.text,  
-                                  cnh: cnhController.text, 
-                                  usuarioId: int.parse(usuarioIdController.text),  
-                                  usuario: await UsuarioRepository.getUsuarioById(int.parse(usuarioIdController.text))
-                                );
+                              if (fKey.currentState!.validate()) {
                                 try {
-                                  await ProprietarioRepository.createProprietario(proprietario);
+                                  await ProprietarioRepository.createProprietario(nomeController.text, cpfController.text, cnhController.text, int.parse(usuarioIdController.text));
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
                                       content: Text('Proprietário cadastrado com sucesso'),

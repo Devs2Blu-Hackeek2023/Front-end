@@ -1,3 +1,4 @@
+import 'package:co2now/screens/add_proprietarios.dart';
 import 'package:co2now/screens/add_usuarios.dart';
 import 'package:co2now/screens/car_screen.dart';
 import 'package:co2now/screens/car_select_screen.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         '/regions':(context) => const RegionsScreen(),
         '/homeADM': (context) => const HomeScreenAdm(),
         '/addUser': (context) => const AddUsuario(),
+        '/addProp':(context) => const AddProprietario(),
         '/region':(context) => const RegionScreen(),
         '/street':(context) => const StreetScreen()
       },

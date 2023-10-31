@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 class RuaRepository {
   static Future<List<RuaModel>> getRuas() async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Rua");
+      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Rua");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
@@ -22,7 +22,7 @@ class RuaRepository {
 
   static Future<RuaModel> getRuaByCEP(String cep) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Rua/$cep");
+      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Rua/$cep");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
