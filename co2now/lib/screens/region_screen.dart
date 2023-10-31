@@ -54,13 +54,12 @@ class _RegionScreenState extends State<RegionScreen> {
                   const SizedBox(
                     height: 30,
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Ccolor.verde3,
-                      borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: DropdownMenu<String>(
+                  DropdownMenu<String>(
                       initialSelection: list.first,
+                      inputDecorationTheme: const InputDecorationTheme(
+                        filled: true,
+                        fillColor: Ccolor.verde3
+                      ),
                       textStyle: const TextStyle(
                         color: Ccolor.fundoBranco,
                         fontSize: 15,
@@ -68,9 +67,7 @@ class _RegionScreenState extends State<RegionScreen> {
                       ),
                       menuStyle: const MenuStyle(
                         backgroundColor: MaterialStatePropertyAll(Ccolor.verde3),
-                      ),
-                      inputDecorationTheme: const InputDecorationTheme(
-                        border: OutlineInputBorder()
+                        
                       ),
                       width: 1000,
                       onSelected: (String? value) {
@@ -83,7 +80,6 @@ class _RegionScreenState extends State<RegionScreen> {
                         return DropdownMenuEntry<String>(value: value, label: value);
                       }).toList(),
                     ),
-                  ),
                   const SizedBox(
                     height: 60,
                   ),
