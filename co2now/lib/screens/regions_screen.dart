@@ -62,7 +62,10 @@ class _RegionsScreenState extends State<RegionsScreen> {
                         borderRadius: BorderRadius.circular(10)),
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: ((context) => RegionScreen(isLogged: widget.isLogged))));
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: ((context) => RegionScreen(
+                                  isLogged: widget.isLogged,
+                                ))));
                       },
                       style: ButtonStyle(
                         backgroundColor:
@@ -90,7 +93,10 @@ class _RegionsScreenState extends State<RegionsScreen> {
                         borderRadius: BorderRadius.circular(10)),
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pushReplacementNamed(context, '/region');
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: ((context) => RegionScreen(
+                                  isLogged: widget.isLogged,
+                                ))));
                       },
                       style: ButtonStyle(
                         backgroundColor:
@@ -118,7 +124,10 @@ class _RegionsScreenState extends State<RegionsScreen> {
                         borderRadius: BorderRadius.circular(10)),
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pushReplacementNamed(context, '/region');
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: ((context) => RegionScreen(
+                                  isLogged: widget.isLogged,
+                                ))));
                       },
                       style: ButtonStyle(
                         backgroundColor:
@@ -146,7 +155,10 @@ class _RegionsScreenState extends State<RegionsScreen> {
                         borderRadius: BorderRadius.circular(10)),
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pushReplacementNamed(context, '/region');
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: ((context) => RegionScreen(
+                                  isLogged: widget.isLogged,
+                                ))));
                       },
                       style: ButtonStyle(
                         backgroundColor:
@@ -174,14 +186,17 @@ class _RegionsScreenState extends State<RegionsScreen> {
                         borderRadius: BorderRadius.circular(10)),
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pushReplacementNamed(context, '/region');
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: ((context) => RegionScreen(
+                                  isLogged: widget.isLogged,
+                                ))));
                       },
                       style: ButtonStyle(
                         backgroundColor:
                             MaterialStateProperty.all(Ccolor.verde5),
                       ),
                       child: const Text(
-                        'Centro',
+                        'Central',
                         style: TextStyle(
                             color: Ccolor.fundoBranco,
                             fontSize: 30,

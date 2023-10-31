@@ -8,7 +8,14 @@ import 'package:flutter/material.dart';
 import 'package:co2now/widgets/side_bar.dart';
 import 'package:sidebarx/sidebarx.dart';
 
-const List<String> list = <String>['One', 'Two', 'Three', 'Four'];
+const List<String> list = <String>[
+  "Da Glória",
+  "Garcia",
+  "Progresso",
+  "Ribeirão Fresco",
+  "Valparaíso",
+  "Vila Formosa",
+];
 
 class RegionScreen extends StatefulWidget {
   bool isLogged;
@@ -21,13 +28,13 @@ class RegionScreen extends StatefulWidget {
 class _RegionScreenState extends State<RegionScreen> {
   final _controller = SidebarXController(selectedIndex: 0, extended: false);
   final TextEditingController cep = TextEditingController();
-  List <double> streetSummary = [
-                              4.40, //Norte
-                              42.42, //Oeste
-                              10.50, //Centro
-                              88.99, //Leste
-                              90.10
-                            ];
+  List<double> streetSummary = [
+    4.40, //Norte
+    42.42, //Oeste
+    10.50, //Centro
+    88.99, //Leste
+    90.10
+  ];
   String dropdownValue = list.first;
   bool value = true;
 
@@ -39,65 +46,65 @@ class _RegionScreenState extends State<RegionScreen> {
           SingleChildScrollView(
             child: SizedBox(
               child: Padding(
-                padding: const EdgeInsets.only(left: 200, top: 30, bottom: 0, right: 90),
+                padding: const EdgeInsets.only(
+                    left: 200, top: 30, bottom: 0, right: 90),
                 child: Column(
                   children: [
                     SizedBox(
                       width: 1000,
-                      child: TextField(  
+                      child: TextField(
                         decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10)
-                          ),
-                          suffixIcon: IconButton(icon: const Icon(Icons.search), onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => StreetScreen(
-                                      cep: cep.text,
-                                      isLogged: widget.isLogged)));
-                          },),
-                          labelText: 'CEP'
-                        ), 
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10)),
+                            suffixIcon: IconButton(
+                              icon: const Icon(Icons.search),
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => StreetScreen(
+                                        cep: cep.text,
+                                        isLogged: widget.isLogged)));
+                              },
+                            ),
+                            labelText: 'CEP'),
                       ),
                     ),
                     const SizedBox(
                       height: 30,
                     ),
                     DropdownMenu<String>(
-                        initialSelection: list.first,
-                        inputDecorationTheme: const InputDecorationTheme(
-                          filled: true,
-                          fillColor: Ccolor.verde3
-                        ),
-                        textStyle: const TextStyle(
+                      initialSelection: list.first,
+                      inputDecorationTheme: const InputDecorationTheme(
+                          filled: true, fillColor: Ccolor.verde3),
+                      textStyle: const TextStyle(
                           color: Ccolor.fundoBranco,
                           fontSize: 15,
-                          fontWeight: FontWeight.bold
-                        ),
-                        menuStyle: const MenuStyle(
-                          backgroundColor: MaterialStatePropertyAll(Ccolor.verde3),
-                          
-                        ),
-                        width: 1000,
-                        onSelected: (String? value) {
-                          // This is called when the user selects an item.
-                          setState(() {
-                            dropdownValue = value!;
-                          });
-                        },
-                        dropdownMenuEntries: list.map<DropdownMenuEntry<String>>((String value) {
-                          return DropdownMenuEntry<String>(value: value, label: value);
-                        }).toList(),
+                          fontWeight: FontWeight.bold),
+                      menuStyle: const MenuStyle(
+                        backgroundColor:
+                            MaterialStatePropertyAll(Ccolor.verde3),
                       ),
+                      width: 1000,
+                      onSelected: (String? value) {
+                        // This is called when the user selects an item.
+                        setState(() {
+                          dropdownValue = value!;
+                        });
+                      },
+                      dropdownMenuEntries:
+                          list.map<DropdownMenuEntry<String>>((String value) {
+                        return DropdownMenuEntry<String>(
+                            value: value, label: value);
+                      }).toList(),
+                    ),
                     const SizedBox(
                       height: 60,
                     ),
                     SizedBox(
-                      width: 625,
-                      height: 415,
-                      child: BarGraphStreet(
-                        regionStreetSummary: streetSummary,
-                      )
-                    ),
+                        width: 625,
+                        height: 415,
+                        child: BarGraphStreet(
+                          regionStreetSummary: streetSummary,
+                        )),
                     const SizedBox(
                       height: 60,
                     ),
@@ -108,7 +115,7 @@ class _RegionScreenState extends State<RegionScreen> {
                           onPressed: () {
                             setState(() {
                               value = !value;
-          
+
                               streetSummary = [
                                 4.40, //Norte
                                 42.42, //Oeste
@@ -119,12 +126,11 @@ class _RegionScreenState extends State<RegionScreen> {
                             });
                           },
                           style: ButtonStyle(
-                            backgroundColor: 
-                            MaterialStatePropertyAll(
-                              value ? Ccolor.verde3 : Ccolor.verde5
-                            )
-                          ),
-                          child: const Text('Mês', style: TextStyle(
+                              backgroundColor: MaterialStatePropertyAll(
+                                  value ? Ccolor.verde3 : Ccolor.verde5)),
+                          child: const Text(
+                            'Mês',
+                            style: TextStyle(
                                 color: Ccolor.fundoBranco,
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold),
@@ -148,12 +154,11 @@ class _RegionScreenState extends State<RegionScreen> {
                             });
                           },
                           style: ButtonStyle(
-                            backgroundColor: 
-                              MaterialStatePropertyAll(
-                                value ? Ccolor.verde5 : Ccolor.verde3
-                              )
-                            ),
-                            child: const Text('Ano', style: TextStyle(
+                              backgroundColor: MaterialStatePropertyAll(
+                                  value ? Ccolor.verde5 : Ccolor.verde3)),
+                          child: const Text(
+                            'Ano',
+                            style: TextStyle(
                                 color: Ccolor.fundoBranco,
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold),
@@ -168,11 +173,11 @@ class _RegionScreenState extends State<RegionScreen> {
               ),
             ),
           ),
-          Row(
-            children: [
-              widget.isLogged ? SideBar(controller: _controller) : SideBarPub(controller: _controller),
-            ]
-          )
+          Row(children: [
+            widget.isLogged
+                ? SideBar(controller: _controller)
+                : SideBarPub(controller: _controller),
+          ])
         ],
       ),
     );
