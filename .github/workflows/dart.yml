@@ -25,5 +25,5 @@ jobs:
           script: |
             cd ${{ secrets.DEPLOY_DIR }}
             git pull 
-            nginx -s reload
+            sudo -u ubuntu nginx -s reload
            
