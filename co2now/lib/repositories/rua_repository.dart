@@ -22,7 +22,7 @@ class RuaRepository {
 
   static Future<RuaModel> getRuaByCEP(String cep) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Rua/$cep");
+      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Rua/cep/$cep");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
