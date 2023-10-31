@@ -224,7 +224,7 @@ class HomeScreenAdm extends StatefulWidget {
                                   categoria: categoriaController.text,
                                   motor: motorController.text, 
                                   combustivel: combustivelController.text, 
-                                  kml: int.parse(kmlController.text), 
+                                  kmL: int.parse(kmlController.text), 
                                   proprietarioId: int.parse(proprietarioIdController.text), 
                                   proprietario: await ProprietarioRepository.getProprietarioById(int.parse(proprietarioIdController.text)), 
                                   modificacoes: modificacoesController.text

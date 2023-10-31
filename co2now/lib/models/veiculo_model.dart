@@ -9,7 +9,7 @@ class VeiculoModel {
   late String categoria;
   late String motor;
   late String combustivel;
-  late int kml;
+  late int kmL;
   late int proprietarioId;
   ProprietarioModel? proprietario;
   late String modificacoes;
@@ -23,7 +23,7 @@ class VeiculoModel {
     required this.categoria,
     required this.motor,
     required this.combustivel,
-    required this.kml,
+    required this.kmL,
     required this.proprietarioId,
     this.proprietario,
     required this.modificacoes,
@@ -38,9 +38,9 @@ class VeiculoModel {
     categoria = json['categoria'];
     motor = json['motor'];
     combustivel = json['combustivel'];
-    kml = json['kml'];
+    kmL = json['kmL'];
     proprietarioId = json['proprietarioId'];
-    proprietario = ProprietarioModel.fromJson(json['proprietario']);
+    // proprietario = ProprietarioModel.fromJson(json['proprietario']);
     modificacoes = json['modificacoes'];
   }
 
@@ -54,9 +54,9 @@ class VeiculoModel {
       'categoria': categoria,
       'motor': motor,
       'combustivel': combustivel,
-      'kml': kml,
+      'kmL': kmL,
       'proprietarioId': proprietarioId,
-      'proprietario': proprietario!.toJson(),
+      // 'proprietario': proprietario!.toJson(),
       'modificacoes': modificacoes,
     };
   }

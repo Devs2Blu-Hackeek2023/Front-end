@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/home': (context) => HomeScreen(isLogged: false),
         '/login': (context) => const LoginScreen(),
-        '/veiculo': (context) => const CarSelectScreen(id:0,),
+        '/veiculo': (context) => const CarSelectScreen(id:0),
         '/veiculos':(context) => const CarScreen(),
         '/regions':(context) => const RegionsScreen(),
         '/homeADM': (context) => const HomeScreenAdm(),
