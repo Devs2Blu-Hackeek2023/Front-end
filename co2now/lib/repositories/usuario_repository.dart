@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 class UsuarioRepository {
   static Future<void> createUsuario(UsuarioModel usuario) async {
     try {
-      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/api/Usuario");
+      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Usuario");
       final response = await http.post(
         uri,
         body: jsonEncode(usuario.toJson()),
@@ -16,6 +16,28 @@ class UsuarioRepository {
         // Usuário criado com sucesso
       } else {
         throw("Erro ao criar um novo usuário. Status Code: ${response.statusCode}");
+      }
+    } catch (e) {
+      throw("Erro ao fazer a solicitação HTTP: $e");
+    }
+  }
+
+  static Future<void> loginUser(String username, String password) async {
+    try {
+      Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Login");
+      final response = await http.post(
+        uri,
+        body: jsonEncode({
+          "username": username,
+          "password": password,
+        }),
+        headers: {'Content-Type': 'application/json'},
+      );
+
+      if (response.statusCode == 200) {
+        // Login bem-sucedido
+      } else {
+        throw("Erro ao fazer login. Status Code: ${response.statusCode}");
       }
     } catch (e) {
       throw("Erro ao fazer a solicitação HTTP: $e");
