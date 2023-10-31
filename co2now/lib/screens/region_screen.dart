@@ -1,6 +1,3 @@
-// import 'package:co2now/models/rua_model.dart';
-// import 'package:co2now/repositories/rua_repository.dart';
-// import 'package:co2now/colors/ccolor.dart';
 import 'package:co2now/bar_graph/bar_graph_streets/bar_graph_street.dart';
 import 'package:co2now/colors/ccolor.dart';
 import 'package:flutter/material.dart';
@@ -27,6 +24,8 @@ class _RegionScreenState extends State<RegionScreen> {
                               90.10
                             ];
   String dropdownValue = list.first;
+  bool value = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +33,7 @@ class _RegionScreenState extends State<RegionScreen> {
         children: [
           SizedBox(
             child: Padding(
-              padding: const EdgeInsets.only(left: 230, top: 20, bottom: 50),
+              padding: const EdgeInsets.only(left: 200, top: 30, bottom: 0, right: 90),
               child: Column(
                 children: [
                   SizedBox(
@@ -46,7 +45,7 @@ class _RegionScreenState extends State<RegionScreen> {
                         ),
                         suffixIcon: IconButton(icon: const Icon(Icons.search), onPressed: () {
                           // Future<RuaModel> rua = RuaRepository.getRuaByCEP(cep.text);
-                          Navigator.pushReplacementNamed(context, '/');
+                          Navigator.pushReplacementNamed(context, '/street');
                         },),
                         labelText: 'CEP'
                       ), 
@@ -55,21 +54,35 @@ class _RegionScreenState extends State<RegionScreen> {
                   const SizedBox(
                     height: 30,
                   ),
-                  DropdownMenu<String>(
-                    initialSelection: list.first,
-                    menuStyle: MenuStyle(
-                      backgroundColor: MaterialStateProperty.all(Ccolor.verde3),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Ccolor.verde3,
+                      borderRadius: BorderRadius.circular(10)
                     ),
-                    width: 1000,
-                    onSelected: (String? value) {
-                      // This is called when the user selects an item.
-                      setState(() {
-                        dropdownValue = value!;
-                      });
-                    },
-                    dropdownMenuEntries: list.map<DropdownMenuEntry<String>>((String value) {
-                      return DropdownMenuEntry<String>(value: value, label: value);
-                    }).toList(),
+                    child: DropdownMenu<String>(
+                      initialSelection: list.first,
+                      textStyle: const TextStyle(
+                        color: Ccolor.fundoBranco,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold
+                      ),
+                      menuStyle: const MenuStyle(
+                        backgroundColor: MaterialStatePropertyAll(Ccolor.verde3),
+                      ),
+                      inputDecorationTheme: const InputDecorationTheme(
+                        border: OutlineInputBorder()
+                      ),
+                      width: 1000,
+                      onSelected: (String? value) {
+                        // This is called when the user selects an item.
+                        setState(() {
+                          dropdownValue = value!;
+                        });
+                      },
+                      dropdownMenuEntries: list.map<DropdownMenuEntry<String>>((String value) {
+                        return DropdownMenuEntry<String>(value: value, label: value);
+                      }).toList(),
+                    ),
                   ),
                   const SizedBox(
                     height: 60,
@@ -90,6 +103,8 @@ class _RegionScreenState extends State<RegionScreen> {
                       ElevatedButton(
                         onPressed: () {
                           setState(() {
+                            value = !value;
+
                             streetSummary = [
                               4.40, //Norte
                               42.42, //Oeste
@@ -97,17 +112,18 @@ class _RegionScreenState extends State<RegionScreen> {
                               88.99, //Leste
                               90.10
                             ];
-                            ButtonStyle(backgroundColor: MaterialStateProperty.all(Ccolor.verde3));
                           });
-                        }, 
+                        },
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(Ccolor.verde5)
+                          backgroundColor: 
+                          MaterialStatePropertyAll(
+                            value ? Ccolor.verde3 : Ccolor.verde5
+                          )
                         ),
-                        child: const Text('Mês',style:  TextStyle(
-                          color: Ccolor.fundoBranco,
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold
-                          ),
+                        child: const Text('Mês', style: TextStyle(
+                              color: Ccolor.fundoBranco,
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -117,6 +133,7 @@ class _RegionScreenState extends State<RegionScreen> {
                       ElevatedButton(
                         onPressed: () {
                           setState(() {
+                            value = !value;
                             streetSummary = [
                               90.40, //Norte
                               42.42, //Oeste
@@ -124,17 +141,18 @@ class _RegionScreenState extends State<RegionScreen> {
                               88.99, //Leste
                               90.10
                             ];
-                            ButtonStyle(backgroundColor: MaterialStateProperty.all(Ccolor.verde3));
                           });
-                        }, 
+                        },
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(Ccolor.verde5)
-                        ),
-                        child: const Text('Ano',style:  TextStyle(
-                          color: Ccolor.fundoBranco,
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold
+                          backgroundColor: 
+                            MaterialStatePropertyAll(
+                              value ? Ccolor.verde5 : Ccolor.verde3
+                            )
                           ),
+                          child: const Text('Ano', style: TextStyle(
+                              color: Ccolor.fundoBranco,
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -147,7 +165,6 @@ class _RegionScreenState extends State<RegionScreen> {
           Row(
             children: [
               SideBar(controller: _controller),
-
             ]
           )
         ],

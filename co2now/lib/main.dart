@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
+      theme: ThemeData(useMaterial3: true),
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       color: Ccolor.fundoBranco,
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
         '/homeADM': (context) => const HomeScreenAdm(),
         '/addUser': (context) => const AddUsuario(),
         '/region':(context) => const RegionScreen(),
-        '/':(context) => const StreetScreen()
+        '/street':(context) => const StreetScreen()
       },
     );
   }

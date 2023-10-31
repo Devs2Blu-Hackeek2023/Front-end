@@ -1,4 +1,3 @@
-import 'package:co2now/colors/ccolor.dart';
 import 'package:flutter/material.dart';
 import 'package:co2now/bar_graph/bar_graph_regions/bar_graph.dart';
 
@@ -23,13 +22,6 @@ class _GerarGraficoState extends State<GerarGrafico> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center, 
         children: [
-          const Text('Regiões', style: TextStyle(
-              color: Ccolor.cinza,
-              fontSize: 30,
-              fontWeight: FontWeight.bold
-              ),
-              textAlign: TextAlign.center,
-            ),
           SizedBox(
             height: widget.altura,
             width: widget.largura,
