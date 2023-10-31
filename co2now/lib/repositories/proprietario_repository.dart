@@ -3,19 +3,24 @@ import 'package:co2now/models/proprietario_model.dart';
 import 'package:http/http.dart' as http;
 
 class ProprietarioRepository {
-  static Future<void> createProprietario(ProprietarioModel proprietario) async {
+  static Future<void> createProprietario(String nome, String cpf, String cnh, int usuarioId) async {
     try {
       Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/Proprietario");
       final response = await http.post(
         uri,
-        body: jsonEncode(proprietario.toJson()),
+        body: jsonEncode({
+          "nomeCompleto": nome,
+          "cpf": cpf,
+          "cnh": cnh,
+          "usuarioId": usuarioId
+        }),
         headers: {'Content-Type': 'application/json'},
       );
 
-      if (response.statusCode == 201) {
+      if (response.statusCode == 200) {
         // Proprietário criado com sucesso
       } else {
-        throw("Erro ao criar um novo proprietário. Status Code: ${response.statusCode}");
+        throw("Erro ao criar um novo proprietário. Status Code: ${response.body}");
       }
     } catch (e) {
       throw("Erro ao fazer a solicitação HTTP: $e");

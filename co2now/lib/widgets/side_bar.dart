@@ -56,15 +56,7 @@ class SideBar extends StatelessWidget {
           onTap: () {
             Navigator.pushReplacementNamed(context, "/veiculos");
           }
-        ),
-        SidebarXItem(
-          icon: Icons.settings,
-          label: "Settings",
-          onTap: () {
-            
-          }
-        ),
-        
+        ),  
         SidebarXItem(
           icon: Icons.location_on,
           label: "Regions",

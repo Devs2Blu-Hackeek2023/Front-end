@@ -1,4 +1,5 @@
 import 'package:co2now/colors/ccolor.dart';
+import 'package:co2now/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:sidebarx/sidebarx.dart';
 
@@ -56,10 +57,10 @@ class SideBarAdm extends StatelessWidget {
           }
         ),
         SidebarXItem(
-          icon: Icons.person,
+          icon: Icons.person_add_alt_1,
           label: "Proprietários",
           onTap: () {
-
+            Navigator.pushReplacementNamed(context, "/addProp");
           }
         )
       ],
@@ -68,7 +69,7 @@ class SideBarAdm extends StatelessWidget {
             icon: Icons.logout,
             label: "Logout",
             onTap: () {
-              Navigator.pushReplacementNamed(context, "/homePublic");
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeScreen(isLogged: false)));
             }),
       ],
     );
