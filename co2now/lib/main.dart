@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         '/addUser': (context) => const AddUsuario(),
         '/addProp':(context) => const AddProprietario(),
         '/region':(context) => const RegionScreen(),
-        '/street':(context) => const StreetScreen()
+        '/street':(context) => StreetScreen(cep: "")
       },
     );
   }
