@@ -10,21 +10,20 @@ on:
     pull_request:
       types:
         - review
-
 jobs:
   build:
     runs-on: ubuntu-latest
     
-      steps:
-        - name: Deploy no servidor usando SSH
-          uses: appleboy/ssh-action@v0.1.10
-          with:
-            host: ${{ secrets.APPS_HOST }}
-            username: ${{ secrets.ACTIONS_USER }}
-            key: ${{ secrets.SSH_PRIVATE_KEY }}
-            port: ${{ secrets.PORT_SSH }}
-            script: |
-              cd ${{ env.DEPLOY_DIR }}
-              docker pull ${{env.IMAGE_NAME }}
-              docker-compose up -d ${{ env.COMPOSE_SERVICE }}
-              docker image prune -a -f
+    steps:
+      - name: Deploy no servidor usando SSH
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.APPS_HOST }}
+          username: ${{ secrets.ACTIONS_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.PORT_SSH }}
+          script: |
+            cd ${{ secrets.DEPLOY_DIR }}
+            git pull 
+            nginx -s reload
+           
