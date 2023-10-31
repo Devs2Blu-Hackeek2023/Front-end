@@ -7,7 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:sidebarx/sidebarx.dart';
 
 class CarSelectScreen extends StatefulWidget {
-  const CarSelectScreen({super.key});
+  final int id;
+  const CarSelectScreen({super.key, required this.id});
 
   @override
   State<CarSelectScreen> createState() => _CarSelectScreenState();
