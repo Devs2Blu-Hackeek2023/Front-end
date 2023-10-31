@@ -1,4 +1,5 @@
 import 'package:co2now/colors/ccolor.dart';
+import 'package:co2now/widgets/mostrar_carros.dart';
 import 'package:co2now/widgets/side_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:sidebarx/sidebarx.dart';
@@ -24,9 +25,10 @@ class _CarScreen extends State<CarScreen> {
                       color: Ccolor.verde3,
                       height: double.infinity,
                       width: 240,
+                      child: const MostrarCarro(),
                     )
-                  ],
-                )
+                  ]
+                ),
             ],
           ),
         );
