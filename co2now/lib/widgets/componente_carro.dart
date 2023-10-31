@@ -39,7 +39,7 @@ class VeiculosTile extends StatelessWidget {
         ),
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => CarSelectScreen(id: veiculoModel.id)));
+            builder: (context) => CarSelectScreen(id: veiculoModel.id, placa: veiculoModel.placa, modelo: veiculoModel.modelo, marca: veiculoModel.marca, categoria: veiculoModel.categoria, kmL: veiculoModel.kmL,)));
         },
       );
   }
