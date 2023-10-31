@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 GerarGrafico(regionSummary: [
-                  4.40, //Norte
+                  70.40, //Norte
                   42.42, //Oeste
                   10.50, //Centro
                   88.99, //Leste

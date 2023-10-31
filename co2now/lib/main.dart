@@ -30,14 +30,14 @@ class MyApp extends StatelessWidget {
       routes: {
         '/home': (context) => HomeScreen(isLogged: false),
         '/login': (context) => const LoginScreen(),
-        '/veiculo': (context) => const CarSelectScreen(id:0),
+        '/veiculo': (context) => const CarSelectScreen(id:0, placa: '', modelo: '', marca: '', categoria: '', kmL: 0),
         '/veiculos':(context) => const CarScreen(),
         '/regions':(context) => const RegionsScreen(),
         '/homeADM': (context) => const HomeScreenAdm(),
         '/addUser': (context) => const AddUsuario(),
         '/addProp':(context) => const AddProprietario(),
         '/region':(context) => const RegionScreen(),
-        '/street':(context) => StreetScreen(cep: "")
+        '/street':(context) => StreetScreen(cep: '',)
       },
     );
   }

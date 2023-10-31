@@ -9,7 +9,12 @@ import 'package:sidebarx/sidebarx.dart';
 
 class CarSelectScreen extends StatefulWidget {
   final int id;
-  const CarSelectScreen({super.key, required this.id});
+  final String placa;
+  final String modelo;
+  final String marca;
+  final String categoria;
+  final int kmL;
+  const CarSelectScreen({super.key, required this.id, required this.placa, required this.modelo, required this.marca, required this.categoria, required this.kmL});
 
   @override
   State<CarSelectScreen> createState() => _CarSelectScreenState();
@@ -46,19 +51,19 @@ class _CarSelectScreenState extends State<CarSelectScreen> {
                                       child: Icon(Cicons.directions_car, color: Ccolor.fundoBranco, size: 50,),
                                     )
                                   ),
-                                  const Padding(
-                                    padding:  EdgeInsets.all(10.0),
+                                  Padding(
+                                    padding: const EdgeInsets.all(10.0),
                                     child:  Column(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
-                                        Text('Placa', style: TextStyle(
+                                        Text(widget.placa, style: const TextStyle(
                                           color: Ccolor.fundoBranco,
                                           fontSize: 30,
                                           fontWeight: FontWeight.bold
                                           ),
                                           textAlign: TextAlign.center,
                                         ),
-                                        Text('Marca', style: TextStyle(
+                                        Text(widget.marca, style: const TextStyle(
                                           color: Ccolor.fundoBranco
                                         ),)
                                       ],
@@ -68,13 +73,13 @@ class _CarSelectScreenState extends State<CarSelectScreen> {
                               ),
                             ),
                           ),
-                          const Padding(
-                            padding: EdgeInsets.only(left: 365, top: 25),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 365, top: 25),
                             child: Row(
                               children: [
-                                InformationCar(information: 'Carro',title: 'Categoria'),
-                                SizedBox(width: 40,),
-                                InformationCar(information: '10Kg',title: 'Emissão'),
+                                InformationCar(information: widget.categoria,title: 'Categoria'),
+                                const SizedBox(width: 40,),
+                                InformationCar(information: widget.kmL.toString(),title: 'KmL'),
                               ],
                             ),
                           ),

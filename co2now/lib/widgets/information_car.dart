@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class InformationCar extends StatelessWidget {
   final String title;
-  final String information;
+  final dynamic information;
   const InformationCar({super.key, required this.title, required this.information});
 
   @override
