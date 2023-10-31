@@ -1,4 +1,4 @@
- import 'package:co2now/colors/ccolor.dart';
+import 'package:co2now/colors/ccolor.dart';
 import 'package:co2now/icons/cicons.dart';
 import 'package:co2now/line_graph/line_graph.dart';
 import 'package:co2now/widgets/information_car.dart';
@@ -86,15 +86,15 @@ class _CarSelectScreenState extends State<CarSelectScreen> {
                           const SizedBox(height: 10,),
                           SizedBox(
                             height: MediaQuery.of(context).size.height - 191,
-                              child: const Column(
+                              child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   SizedBox(
                                     width: 625,
                                     height: 415,
                                     child: Padding(
-                                      padding: EdgeInsets.all(15.0),
-                                      child: LineGraph(),
+                                      padding: const EdgeInsets.all(15.0),
+                                      child: LineGraph(id: widget.id),
                                     )
                                   ),
                                 ],

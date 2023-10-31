@@ -87,19 +87,32 @@ class VeiculoRepository {
     }
   }
 
-  static Future<List<EmissaoModel>> getEmissaoDiaByVeiculoId(int id, int dia, int mes, int ano) async {
+  static Future<double> getEmissaoDiaByVeiculoId(int id, int dia, int mes, int ano) async {
     try {
       Uri uri = Uri.parse("https://api.co2now.devs2blu.dev.br/veiculo/$id/Emissao/dia/$dia/mes/$mes/ano/$ano");
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {
-        List<dynamic> data = jsonDecode(response.body);
-        List<EmissaoModel> emissoes = data.map((e) => EmissaoModel.fromJson(e)).toList();
-        return emissoes;
+        dynamic data = jsonDecode(response.body);
+        return data;
       } else {
         throw("Erro ao obter emissões do veículo. Status Code: ${response.statusCode}");
       }
     } catch (e) {
+      throw("Erro ao fazer a solicitação HTTP: $e");
+    }
+  }
+
+  static Future<List<double>> getEmissoesMes(int id) async {
+    try{
+      List<double> emissaoData = [];
+      for(int i = 1; i < 32; i++){
+        emissaoData.add(await getEmissaoDiaByVeiculoId(id, i, 10, 2023));
+        
+      }
+      print(emissaoData);
+      return emissaoData;
+    }catch (e) {
       throw("Erro ao fazer a solicitação HTTP: $e");
     }
   }

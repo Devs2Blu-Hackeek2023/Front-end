@@ -1,76 +1,89 @@
 import 'package:co2now/colors/ccolor.dart';
+import 'package:co2now/repositories/veiculo_repository.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 class LineGraph extends StatelessWidget {
-  const LineGraph({super.key});
+  final int id;
+  const LineGraph({super.key, required this.id});
 
   @override
   Widget build(BuildContext context) {
-    return LineChart(
-      LineChartData(
-        minX: 1,
-        maxX: 31,
-        minY: 0,
-        maxY: 100000,
-        titlesData: Title.getTitleData(),
-        gridData: FlGridData(
-          show: true,
-          getDrawingHorizontalLine: (value) {
-            return const FlLine(
-              color: Ccolor.verde5,
-              strokeWidth: 1
-            );
-          }        
-        ),
-        borderData: FlBorderData(
-          show: true,
-          border: Border.all(color: Ccolor.cinza, width: 2)
-        ),
-        lineBarsData: [
-          LineChartBarData(
-            spots: const  [
-              FlSpot(1, 30000),
-              FlSpot(2, 54515),
-              FlSpot(3, 44515),
-              FlSpot(4, 44515),
-              FlSpot(5, 34515),
-              FlSpot(6, 48484),
-              FlSpot(7, 34515),
-              FlSpot(8, 14515),
-              FlSpot(9, 54515),
-              FlSpot(10, 44515),
-              FlSpot(11, 44515),
-              FlSpot(12, 34515),
-              FlSpot(13, 30000),
-              FlSpot(14, 34515),
-              FlSpot(15, 14515),
-              FlSpot(16, 54515),
-              FlSpot(17, 44515),
-              FlSpot(18, 44515),
-              FlSpot(19, 34515),
-              FlSpot(20, 50454),
-              FlSpot(21, 34515),
-              FlSpot(22, 14515),
-              FlSpot(23, 54515),
-              FlSpot(24, 48515),
-              FlSpot(25, 44515),
-              FlSpot(26, 89413),
-              FlSpot(27, 35611),
-              FlSpot(28, 30000),
-              FlSpot(29, 78512),
-              FlSpot(30, 30000),
-            ],
-            isCurved: false,
-            color: Ccolor.verde3,
-            barWidth: 3,
-            belowBarData: BarAreaData(
-              show: false,
-              color: Ccolor.verde1
-            )
+    return FutureBuilder(
+      future: VeiculoRepository.getEmissoesMes(id),
+      builder: (context, snapshot) {
+        if(snapshot.hasData) {
+          return LineChart(
+          LineChartData(
+            minX: 1,
+            maxX: 31,
+            minY: 0,
+            maxY: 10000000,
+            titlesData: Title.getTitleData(),
+            gridData: FlGridData(
+              show: true,
+              getDrawingHorizontalLine: (value) {
+                return const FlLine(
+                  color: Ccolor.verde5,
+                  strokeWidth: 1
+                );
+              }        
+            ),
+            borderData: FlBorderData(
+              show: true,
+              border: Border.all(color: Ccolor.cinza, width: 2)
+            ),
+            lineBarsData: [
+              LineChartBarData(
+                spots:  [
+                  FlSpot(1, snapshot.data![0]),
+                  FlSpot(2, snapshot.data![1]),
+                  FlSpot(3, snapshot.data![2]),
+                  FlSpot(4, snapshot.data![3]),
+                  FlSpot(5, snapshot.data![4]),
+                  FlSpot(6, snapshot.data![5]),
+                  FlSpot(7, snapshot.data![6]),
+                  FlSpot(8, snapshot.data![7]),
+                  FlSpot(9, snapshot.data![8]),
+                  FlSpot(10, snapshot.data![9]),
+                  FlSpot(11, snapshot.data![10]),
+                  FlSpot(12, snapshot.data![11]),
+                  FlSpot(13, snapshot.data![12]),
+                  FlSpot(14, snapshot.data![13]),
+                  FlSpot(15, snapshot.data![14]),
+                  FlSpot(16, snapshot.data![15]),
+                  FlSpot(17, snapshot.data![16]),
+                  FlSpot(18, snapshot.data![17]),
+                  FlSpot(19, snapshot.data![18]),
+                  FlSpot(20, snapshot.data![19]),
+                  FlSpot(21, snapshot.data![20]),
+                  FlSpot(22, snapshot.data![21]),
+                  FlSpot(23, snapshot.data![22]),
+                  FlSpot(24, snapshot.data![23]),
+                  FlSpot(25, snapshot.data![24]),
+                  FlSpot(26, snapshot.data![25]),
+                  FlSpot(27, snapshot.data![26]),
+                  FlSpot(28, snapshot.data![27]),
+                  FlSpot(29, snapshot.data![28]),
+                  FlSpot(30, snapshot.data![29]),
+                  FlSpot(31, snapshot.data![30])
+                ],
+                isCurved: false,
+                color: Ccolor.verde3,
+                barWidth: 3,
+                belowBarData: BarAreaData(
+                  show: false,
+                  color: Ccolor.verde1
+                )
+              )
+            ]
           )
-        ]
-      )
+        );
+        }
+        return const Center(
+              child: CircularProgressIndicator(),
+            );
+      }
     );
   }
 }
